@@ -82,29 +82,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFormClients.cs">
+    <Compile Include="AddFormEquipment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormClients.Designer.cs">
-      <DependentUpon>AddFormClients.cs</DependentUpon>
+    <Compile Include="AddFormEquipment.Designer.cs">
+      <DependentUpon>AddFormEquipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormTechnicians.cs">
+    <Compile Include="AddFormEquipmentMovement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormTechnicians.Designer.cs">
-      <DependentUpon>AddFormTechnicians.cs</DependentUpon>
+    <Compile Include="AddFormEquipmentMovement.Designer.cs">
+      <DependentUpon>AddFormEquipmentMovement.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormRepairOrders.cs">
+    <Compile Include="AddFormSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormRepairOrders.Designer.cs">
-      <DependentUpon>AddFormRepairOrders.cs</DependentUpon>
+    <Compile Include="AddFormSupplier.Designer.cs">
+      <DependentUpon>AddFormSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormSoftwareInstallation.cs">
+    <Compile Include="AddFormEquipmentSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormSoftwareInstallation.Designer.cs">
-      <DependentUpon>AddFormSoftwareInstallation.cs</DependentUpon>
+    <Compile Include="AddFormEquipmentSupplier.Designer.cs">
+      <DependentUpon>AddFormEquipmentSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Form1.cs">
@@ -127,17 +127,17 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddFormClients.resx">
-      <DependentUpon>AddFormClients.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormEquipment.resx">
+      <DependentUpon>AddFormEquipment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormTechnicians.resx">
-      <DependentUpon>AddFormTechnicians.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormEquipmentMovement.resx">
+      <DependentUpon>AddFormEquipmentMovement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormRepairOrders.resx">
-      <DependentUpon>AddFormRepairOrders.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormSupplier.resx">
+      <DependentUpon>AddFormSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormSoftwareInstallation.resx">
-      <DependentUpon>AddFormSoftwareInstallation.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormEquipmentSupplier.resx">
+      <DependentUpon>AddFormEquipmentSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace test_DataBase
 {
-    public partial class AddFormClients : Form
+    public partial class AddFormEquipmentMovement : Form
     {
         private readonly DataBase dataBase = new DataBase();
 
-        public AddFormClients()
+        public AddFormEquipmentMovement()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -24,11 +24,11 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var firstName = textBoxFirstNameClients.Text;
-                var lastName = textBoxLastNameClients.Text;
-                var phoneNumber = textBoxPhoneNumberClients.Text;
-                var email = textBoxEmailClients.Text;
-                var addQuery = $"insert into Clients (FirstName, LastName, PhoneNumber, Email) values ('{firstName}', '{lastName}', '{phoneNumber}', '{email}')";
+                var firstNameTechnicians = textBoxFirstNameTechnicians.Text;
+                var lastNameTechnicians = textBoxLastNameTechnicians.Text;
+                var phoneNumberTechnicians = textBoxPhoneNumberTechnicians.Text;
+                var emailTechnicians = textBoxEmailTechnicians.Text;
+                var addQuery = $"insert into Technicians (FirstName, LastName, PhoneNumber, Email) values ('{firstNameTechnicians}', '{lastNameTechnicians}', '{phoneNumberTechnicians}', '{emailTechnicians}')";
                 var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
                 sqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -41,6 +41,11 @@ namespace test_DataBase
             {
                 dataBase.CloseConnection();
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

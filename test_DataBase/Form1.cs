@@ -9,7 +9,6 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace test_DataBase
@@ -58,32 +57,32 @@ namespace test_DataBase
         {
             try
             {
-                dataGridViewClients.Columns.Add("ClientID", "Номер");
-                dataGridViewClients.Columns.Add("FirstName", "Имя");
-                dataGridViewClients.Columns.Add("LastName", "Фамилия");
-                dataGridViewClients.Columns.Add("PhoneNumber", "Телефон");
-                dataGridViewClients.Columns.Add("Email", "Email");
-                dataGridViewClients.Columns.Add("IsNew", String.Empty);
-                dataGridViewTechnicians.Columns.Add("TechnicianID", "Номер");
-                dataGridViewTechnicians.Columns.Add("FistName", "Имя");
-                dataGridViewTechnicians.Columns.Add("LastName", "Фамилия");
-                dataGridViewTechnicians.Columns.Add("PhoneNumber", "Телефон");
-                dataGridViewTechnicians.Columns.Add("Email", "Email");
-                dataGridViewTechnicians.Columns.Add("IsNew", String.Empty);
-                dataGridViewRepairOrders.Columns.Add("OrderID", "Номер");
-                dataGridViewRepairOrders.Columns.Add("ClientID", "Номер клиента");
-                dataGridViewRepairOrders.Columns.Add("TechnicianID", "Номер техника");
-                dataGridViewRepairOrders.Columns.Add("OrderDate", "Дата заказа");
-                dataGridViewRepairOrders.Columns.Add("Description", "Описание");
-                dataGridViewRepairOrders.Columns.Add("Status", "Статус");
-                dataGridViewRepairOrders.Columns.Add("IsNew", String.Empty);
-                dataGridViewSoftwareInstallation.Columns.Add("InstallationID", "Номер");
-                dataGridViewSoftwareInstallation.Columns.Add("ClientID", "Номер клиента");
-                dataGridViewSoftwareInstallation.Columns.Add("TechnicianID", "Номер техника");
-                dataGridViewSoftwareInstallation.Columns.Add("InstallationDate", "Дата установки");
-                dataGridViewSoftwareInstallation.Columns.Add("SoftwareName", "Название ПО");
-                dataGridViewSoftwareInstallation.Columns.Add("LicenseKey", "Лицензионный ключ");
-                dataGridViewSoftwareInstallation.Columns.Add("IsNew", String.Empty);
+                dataGridViewEquipment.Columns.Add("ClientID", "Номер");
+                dataGridViewEquipment.Columns.Add("FirstName", "Имя");
+                dataGridViewEquipment.Columns.Add("LastName", "Фамилия");
+                dataGridViewEquipment.Columns.Add("PhoneNumber", "Телефон");
+                dataGridViewEquipment.Columns.Add("Email", "Email");
+                dataGridViewEquipment.Columns.Add("IsNew", String.Empty);
+                dataGridViewEquipmentMovement.Columns.Add("TechnicianID", "Номер");
+                dataGridViewEquipmentMovement.Columns.Add("FistName", "Имя");
+                dataGridViewEquipmentMovement.Columns.Add("LastName", "Фамилия");
+                dataGridViewEquipmentMovement.Columns.Add("PhoneNumber", "Телефон");
+                dataGridViewEquipmentMovement.Columns.Add("Email", "Email");
+                dataGridViewEquipmentMovement.Columns.Add("IsNew", String.Empty);
+                dataGridViewSupplier.Columns.Add("OrderID", "Номер");
+                dataGridViewSupplier.Columns.Add("ClientID", "Номер клиента");
+                dataGridViewSupplier.Columns.Add("TechnicianID", "Номер техника");
+                dataGridViewSupplier.Columns.Add("OrderDate", "Дата заказа");
+                dataGridViewSupplier.Columns.Add("Description", "Описание");
+                dataGridViewSupplier.Columns.Add("Status", "Статус");
+                dataGridViewSupplier.Columns.Add("IsNew", String.Empty);
+                dataGridViewEquipmentSupplier.Columns.Add("InstallationID", "Номер");
+                dataGridViewEquipmentSupplier.Columns.Add("ClientID", "Номер клиента");
+                dataGridViewEquipmentSupplier.Columns.Add("TechnicianID", "Номер техника");
+                dataGridViewEquipmentSupplier.Columns.Add("InstallationDate", "Дата установки");
+                dataGridViewEquipmentSupplier.Columns.Add("SoftwareName", "Название ПО");
+                dataGridViewEquipmentSupplier.Columns.Add("LicenseKey", "Лицензионный ключ");
+                dataGridViewEquipmentSupplier.Columns.Add("IsNew", String.Empty);
             }
             catch (Exception ex)
             {
@@ -98,25 +97,25 @@ namespace test_DataBase
         {
             try
             {
-                textBoxClientIDClients.Text = "";
-                textBoxFirstNameClients.Text = "";
-                textBoxLastNameClients.Text = "";
-                textBoxPhoneNumberClients.Text = "";
-                textBoxEmailClients.Text = "";
-                textBoxTechnicianID.Text = "";
-                textBoxFirstNameTechnicians.Text = "";
-                textBoxLastNameTechnicians.Text = "";
-                textBoxPhoneNumberTechnicians.Text = "";
-                textBoxEmailTechnicians.Text = "";
-                textBoxOrderID.Text = "";
-                textBoxClientIDRepairOrders.Text = "";
-                textBoxTechnicianIDRepairOrders.Text = "";
-                textBoxOrderDate.Text = "";
-                textBoxDescription.Text = "";
+                textBoxEquipmentID.Text = "";
+                textBoxName.Text = "";
+                textBoxCategory.Text = "";
+                textBoxPurchaseData.Text = "";
+                textBoxPrice.Text = "";
+                textBoxMovementID.Text = "";
+                textBoxEquipmentIDEquipmentMovement.Text = "";
+                textBoxMovementDate.Text = "";
+                textBoxMovementType.Text = "";
+                textBoxQuantinityEquipmentMovement.Text = "";
+                textBoxSupplierID.Text = "";
+                textBoxNameSupplier.Text = "";
+                textBoxContactPerson.Text = "";
+                textBoxPhone.Text = "";
+                textBoxEmail.Text = "";
                 textBoxStatus.Text = "";
-                textBoxInstallationID.Text = "";
-                textBoxClientIDSoftwareInstallation.Text = "";
-                textBoxTechnicianIDSoftwareInstallation.Text = "";
+                textBoxEquipmentIDEquipmentSupplier.Text = "";
+                textBoxSupplierIDEquipmentSupplier.Text = "";
+                textBoxTechnicianIDEquipmentSupplier.Text = "";
                 textBoxInstallationDate.Text = "";
                 textBoxSoftwareName.Text = "";
                 textBoxLicenseKey.Text = "";
@@ -138,19 +137,19 @@ namespace test_DataBase
             {
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewClients":
+                    case "dataGridViewEquipment":
                         dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetString(2), iDataRecord.GetString(3), iDataRecord.GetString(4), RowState.Modified);
                         break;
 
-                    case "dataGridViewTechnicians":
+                    case "dataGridViewEquipmentMovement":
                         dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetString(2), iDataRecord.GetString(3), iDataRecord.GetString(4), RowState.Modified);
                         break;
 
-                    case "dataGridViewRepairOrders":
+                    case "dataGridViewSupplier":
                         dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetInt32(2), iDataRecord.GetDateTime(3), iDataRecord.GetString(4), iDataRecord.GetString(5), RowState.Modified);
                         break;
 
-                    case "dataGridViewSoftwareInstallation":
+                    case "dataGridViewEquipmentSupplier":
                         dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetInt32(2), iDataRecord.GetDateTime(3), iDataRecord.GetString(4), iDataRecord.GetString(5), RowState.Modified);
                         break;
                 }
@@ -197,10 +196,10 @@ namespace test_DataBase
             try
             {
                 CreateColumns();
-                RefreshDataGrid(dataGridViewClients, "Clients");
-                RefreshDataGrid(dataGridViewTechnicians, "Technicians");
-                RefreshDataGrid(dataGridViewRepairOrders, "RepairOrders");
-                RefreshDataGrid(dataGridViewSoftwareInstallation, "SoftwareInstallation");
+                RefreshDataGrid(dataGridViewEquipment, "Equipment");
+                RefreshDataGrid(dataGridViewEquipmentMovement, "EquipmentMovement");
+                RefreshDataGrid(dataGridViewSupplier, "Supplier");
+                RefreshDataGrid(dataGridViewEquipmentSupplier, "EquipmentSupplier");
             }
             catch (Exception ex)
             {
@@ -220,35 +219,35 @@ namespace test_DataBase
                 DataGridViewRow dataGridViewRow = dataGridView.Rows[selectedRow];
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewClients":
-                        textBoxClientIDClients.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxFirstNameClients.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxLastNameClients.Text = dataGridViewRow.Cells[2].Value.ToString();
-                        textBoxPhoneNumberClients.Text = dataGridViewRow.Cells[3].Value.ToString();
-                        textBoxEmailClients.Text = dataGridViewRow.Cells[4].Value.ToString();
+                    case "dataGridViewEquipment":
+                        textBoxEquipmentID.Text = dataGridViewRow.Cells[0].Value.ToString();
+                        textBoxName.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxCategory.Text = dataGridViewRow.Cells[2].Value.ToString();
+                        textBoxPurchaseData.Text = dataGridViewRow.Cells[3].Value.ToString();
+                        textBoxPrice.Text = dataGridViewRow.Cells[4].Value.ToString();
                         break;
 
-                    case "dataGridViewTechnicians":
-                        textBoxTechnicianID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxFirstNameTechnicians.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxLastNameTechnicians.Text = dataGridViewRow.Cells[2].Value.ToString();
-                        textBoxPhoneNumberTechnicians.Text = dataGridViewRow.Cells[3].Value.ToString();
-                        textBoxEmailTechnicians.Text = dataGridViewRow.Cells[4].Value.ToString();
+                    case "dataGridViewEquipmentMovement":
+                        textBoxMovementID.Text = dataGridViewRow.Cells[0].Value.ToString();
+                        textBoxEquipmentIDEquipmentMovement.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxMovementDate.Text = dataGridViewRow.Cells[2].Value.ToString();
+                        textBoxMovementType.Text = dataGridViewRow.Cells[3].Value.ToString();
+                        textBoxQuantinityEquipmentMovement.Text = dataGridViewRow.Cells[4].Value.ToString();
                         break;
 
-                    case "dataGridViewRepairOrders":
-                        textBoxOrderID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxClientIDRepairOrders.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxTechnicianIDRepairOrders.Text = dataGridViewRow.Cells[2].Value.ToString();
-                        textBoxOrderDate.Text = dataGridViewRow.Cells[3].Value.ToString();
-                        textBoxDescription.Text = dataGridViewRow.Cells[4].Value.ToString();
+                    case "dataGridViewSupplier":
+                        textBoxSupplierID.Text = dataGridViewRow.Cells[0].Value.ToString();
+                        textBoxNameSupplier.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxContactPerson.Text = dataGridViewRow.Cells[2].Value.ToString();
+                        textBoxPhone.Text = dataGridViewRow.Cells[3].Value.ToString();
+                        textBoxEmail.Text = dataGridViewRow.Cells[4].Value.ToString();
                         textBoxStatus.Text = dataGridViewRow.Cells[5].Value.ToString();
                         break;
 
-                    case "dataGridViewSoftwareInstallation":
-                        textBoxInstallationID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxClientIDSoftwareInstallation.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxTechnicianIDSoftwareInstallation.Text = dataGridViewRow.Cells[2].Value.ToString();
+                    case "dataGridViewEquipmentSupplier":
+                        textBoxEquipmentIDEquipmentSupplier.Text = dataGridViewRow.Cells[0].Value.ToString();
+                        textBoxSupplierIDEquipmentSupplier.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxTechnicianIDEquipmentSupplier.Text = dataGridViewRow.Cells[2].Value.ToString();
                         textBoxInstallationDate.Text = dataGridViewRow.Cells[3].Value.ToString();
                         textBoxSoftwareName.Text = dataGridViewRow.Cells[4].Value.ToString();
                         textBoxLicenseKey.Text = dataGridViewRow.Cells[5].Value.ToString();
@@ -272,52 +271,52 @@ namespace test_DataBase
                 dataGridView.Rows.Clear();
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewClients":
-                        string searchStringClients = $"select * from Clients where concat (ClientID, FirstName, LastName, PhoneNumber, Email) like '%" + textBoxSearchClients.Text + "%'";
-                        SqlCommand sqlCommandClients = new SqlCommand(searchStringClients, dataBase.GetConnection());
+                    case "dataGridViewEquipment":
+                        string searchStringEquipment = $"select * from Equipment where concat (ClientID, FirstName, LastName, PhoneNumber, Email) like '%" + textBoxSearchEquipment.Text + "%'";
+                        SqlCommand sqlCommandEquipment = new SqlCommand(searchStringEquipment, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderClients = sqlCommandClients.ExecuteReader();
-                        while (sqlDataReaderClients.Read())
+                        SqlDataReader sqlDataReaderEquipment = sqlCommandEquipment.ExecuteReader();
+                        while (sqlDataReaderEquipment.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderClients);
+                            ReadSingleRow(dataGridView, sqlDataReaderEquipment);
                         }
-                        sqlDataReaderClients.Close();
+                        sqlDataReaderEquipment.Close();
                         break;
 
-                    case "dataGridViewTechnicians":
-                        string searchStringTechnicians = $"select * from Technicians where concat (TechnicianID, FirstName, LastName, PhoneNumber, Email) like '%" + textBoxSearchTechnicians.Text + "%'";
-                        SqlCommand sqlCommandTechnicians = new SqlCommand(searchStringTechnicians, dataBase.GetConnection());
+                    case "dataGridViewEquipmentMovement":
+                        string searchStringEquipmentMovement = $"select * from EquipmentMovement where concat (TechnicianID, FirstName, LastName, PhoneNumber, Email) like '%" + textBoxSearchEquipmentMovement.Text + "%'";
+                        SqlCommand sqlCommandEquipmentMovement = new SqlCommand(searchStringEquipmentMovement, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderTechnicians = sqlCommandTechnicians.ExecuteReader();
-                        while (sqlDataReaderTechnicians.Read())
+                        SqlDataReader sqlDataReaderEquipmentMovement = sqlCommandEquipmentMovement.ExecuteReader();
+                        while (sqlDataReaderEquipmentMovement.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderTechnicians);
+                            ReadSingleRow(dataGridView, sqlDataReaderEquipmentMovement);
                         }
-                        sqlDataReaderTechnicians.Close();
+                        sqlDataReaderEquipmentMovement.Close();
                         break;
 
-                    case "dataGridViewRepairOrders":
-                        string searchStringRepairOrders = $"select * from RepairOrders where concat (OrderID, ClientID, TechnicianID, OrderDate, Description, Status) like '%" + textBoxSearchRepairOrders.Text + "%'";
-                        SqlCommand sqlCommandRepairOrders = new SqlCommand(searchStringRepairOrders, dataBase.GetConnection());
+                    case "dataGridViewSupplier":
+                        string searchStringSupplier = $"select * from Supplier where concat (OrderID, ClientID, TechnicianID, OrderDate, Description, Status) like '%" + textBoxSearchSupplier.Text + "%'";
+                        SqlCommand sqlCommandSupplier = new SqlCommand(searchStringSupplier, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderRepairOrders = sqlCommandRepairOrders.ExecuteReader();
-                        while (sqlDataReaderRepairOrders.Read())
+                        SqlDataReader sqlDataReaderSupplier = sqlCommandSupplier.ExecuteReader();
+                        while (sqlDataReaderSupplier.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderRepairOrders);
+                            ReadSingleRow(dataGridView, sqlDataReaderSupplier);
                         }
-                        sqlDataReaderRepairOrders.Close();
+                        sqlDataReaderSupplier.Close();
                         break;
 
-                    case "dataGridViewSoftwareInstallation":
-                        string searchStringSoftwareInstallation = $"select * from SoftwareInstallation where concat (IstallationID, ClientID, TechnicianID, InstallationDate, SoftwareName, LicenseKey) like '%" + textBoxSearchSoftwareInstallation.Text + "%'";
-                        SqlCommand sqlCommandSoftwareInstallation = new SqlCommand(searchStringSoftwareInstallation, dataBase.GetConnection());
+                    case "dataGridViewEquipmentSupplier":
+                        string searchStringEquipmentSupplier = $"select * from EquipmentSupplier where concat (IstallationID, ClientID, TechnicianID, InstallationDate, SoftwareName, LicenseKey) like '%" + textBoxSearchEquipmentSupplier.Text + "%'";
+                        SqlCommand sqlCommandEquipmentSupplier = new SqlCommand(searchStringEquipmentSupplier, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderSoftwareInstallation = sqlCommandSoftwareInstallation.ExecuteReader();
-                        while (sqlDataReaderSoftwareInstallation.Read())
+                        SqlDataReader sqlDataReaderEquipmentSupplier = sqlCommandEquipmentSupplier.ExecuteReader();
+                        while (sqlDataReaderEquipmentSupplier.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderSoftwareInstallation);
+                            ReadSingleRow(dataGridView, sqlDataReaderEquipmentSupplier);
                         }
-                        sqlDataReaderSoftwareInstallation.Close();
+                        sqlDataReaderEquipmentSupplier.Close();
                         break;
                 }
             }
@@ -339,7 +338,7 @@ namespace test_DataBase
                 dataGridView.Rows[index].Visible = false;
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewClients":
+                    case "dataGridViewEquipment":
                         if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
                         {
                             dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
@@ -348,7 +347,7 @@ namespace test_DataBase
                         dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
                         break;
 
-                    case "dataGridViewTechnicians":
+                    case "dataGridViewEquipmentMovement":
                         if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
                         {
                             dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
@@ -357,7 +356,7 @@ namespace test_DataBase
                         dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
                         break;
 
-                    case "dataGridViewRepairOrders":
+                    case "dataGridViewSupplier":
                         if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
                         {
                             dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
@@ -366,7 +365,7 @@ namespace test_DataBase
                         dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
                         break;
 
-                    case "dataGridViewSoftwareInstallation":
+                    case "dataGridViewEquipmentSupplier":
                         if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
                         {
                             dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
@@ -395,72 +394,72 @@ namespace test_DataBase
                 {
                     switch (dataGridView.Name)
                     {
-                        case "dataGridViewClients":
-                            var rowStateClients = (RowState)dataGridView.Rows[index].Cells[5].Value;
-                            if (rowStateClients == RowState.Existed)
+                        case "dataGridViewEquipment":
+                            var rowStateEquipment = (RowState)dataGridView.Rows[index].Cells[5].Value;
+                            if (rowStateEquipment == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateClients == RowState.Deleted)
+                            if (rowStateEquipment == RowState.Deleted)
                             {
                                 var clientID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Clients where ClientID = {clientID}";
+                                var deleteQuery = $"delete from Equipment where ClientID = {clientID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateClients == RowState.Modified)
+                            if (rowStateEquipment == RowState.Modified)
                             {
                                 var clientID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var firstName = dataGridView.Rows[index].Cells[1].Value.ToString();
                                 var lastName = dataGridView.Rows[index].Cells[2].Value.ToString();
                                 var phoneNumber = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var email = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var changeQuery = $"update Clients set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}', Email = '{email}' where ClientID = '{clientID}'";
+                                var changeQuery = $"update Equipment set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}', Email = '{email}' where ClientID = '{clientID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
-                        case "dataGridViewTechnicians":
-                            var rowStateTechnicians = (RowState)dataGridView.Rows[index].Cells[5].Value;
-                            if (rowStateTechnicians == RowState.Existed)
+                        case "dataGridViewEquipmentMovement":
+                            var rowStateEquipmentMovement = (RowState)dataGridView.Rows[index].Cells[5].Value;
+                            if (rowStateEquipmentMovement == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateTechnicians == RowState.Deleted)
+                            if (rowStateEquipmentMovement == RowState.Deleted)
                             {
                                 var technicianID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Technicians where TechnicianID = {technicianID}";
+                                var deleteQuery = $"delete from EquipmentMovement where TechnicianID = {technicianID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateTechnicians == RowState.Modified)
+                            if (rowStateEquipmentMovement == RowState.Modified)
                             {
                                 var technicianID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var firstName = dataGridView.Rows[index].Cells[1].Value.ToString();
                                 var lastName = dataGridView.Rows[index].Cells[2].Value.ToString();
                                 var phoneNumber = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var email = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var changeQuery = $"update Technicians set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}', Email = '{email}' where TechnicianID = '{technicianID}'";
+                                var changeQuery = $"update EquipmentMovement set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}', Email = '{email}' where TechnicianID = '{technicianID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
-                        case "dataGridViewRepairOrders":
-                            var rowStateRepairOrders = (RowState)dataGridView.Rows[index].Cells[6].Value;
-                            if (rowStateRepairOrders == RowState.Existed)
+                        case "dataGridViewSupplier":
+                            var rowStateSupplier = (RowState)dataGridView.Rows[index].Cells[6].Value;
+                            if (rowStateSupplier == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateRepairOrders == RowState.Deleted)
+                            if (rowStateSupplier == RowState.Deleted)
                             {
                                 var orderID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from RepairOrders where OrderID = {orderID}";
+                                var deleteQuery = $"delete from Supplier where OrderID = {orderID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateRepairOrders == RowState.Modified)
+                            if (rowStateSupplier == RowState.Modified)
                             {
                                 var orderID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var clientID = dataGridView.Rows[index].Cells[1].Value.ToString();
@@ -468,26 +467,26 @@ namespace test_DataBase
                                 var orderDate = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var description = dataGridView.Rows[index].Cells[4].Value.ToString();
                                 var status = dataGridView.Rows[index].Cells[5].Value.ToString();
-                                var changeQuery = $"update RepairOrders set ClientID = '{clientID}', TechnicianID = '{technicianID}', OrderDate = '{orderDate}', Description = '{description}', Status = '{status}' where OrderID = '{orderID}'";
+                                var changeQuery = $"update Supplier set ClientID = '{clientID}', TechnicianID = '{technicianID}', OrderDate = '{orderDate}', Description = '{description}', Status = '{status}' where OrderID = '{orderID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
-                        case "dataGridViewSoftwareInstallation":
-                            var rowStateSoftwareInstallation = (RowState)dataGridView.Rows[index].Cells[6].Value;
-                            if (rowStateSoftwareInstallation == RowState.Existed)
+                        case "dataGridViewEquipmentSupplier":
+                            var rowStateEquipmentSupplier = (RowState)dataGridView.Rows[index].Cells[6].Value;
+                            if (rowStateEquipmentSupplier == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateSoftwareInstallation == RowState.Deleted)
+                            if (rowStateEquipmentSupplier == RowState.Deleted)
                             {
                                 var installationID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from SoftwareInstallation where InstallationID = {installationID}";
+                                var deleteQuery = $"delete from EquipmentSupplier where InstallationID = {installationID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateSoftwareInstallation == RowState.Modified)
+                            if (rowStateEquipmentSupplier == RowState.Modified)
                             {
                                 var installationID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var clientID = dataGridView.Rows[index].Cells[1].Value.ToString();
@@ -495,7 +494,7 @@ namespace test_DataBase
                                 var installationDate = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var softwareName = dataGridView.Rows[index].Cells[4].Value.ToString();
                                 var licenseKey = dataGridView.Rows[index].Cells[5].Value.ToString();
-                                var changeQuery = $"update SoftwareInstallation set ClientID = '{clientID}', TechnicianID = '{technicianID}', InstallationDate = '{installationDate}', SoftwareName = '{softwareName}', LicenseKey = '{licenseKey}' where InstallationID = '{installationID}'";
+                                var changeQuery = $"update EquipmentSupplier set ClientID = '{clientID}', TechnicianID = '{technicianID}', InstallationDate = '{installationDate}', SoftwareName = '{softwareName}', LicenseKey = '{licenseKey}' where InstallationID = '{installationID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -524,45 +523,45 @@ namespace test_DataBase
                 var selectedRowIndex = dataGridView.CurrentCell.RowIndex;
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewClients":
-                        var clientID = textBoxClientIDClients.Text;
-                        var firstName = textBoxFirstNameClients.Text;
-                        var lastName = textBoxLastNameClients.Text;
-                        var phoneNumber = textBoxPhoneNumberClients.Text;
-                        var email = textBoxEmailClients.Text;
+                    case "dataGridViewEquipment":
+                        var clientID = textBoxEquipmentID.Text;
+                        var firstName = textBoxName.Text;
+                        var lastName = textBoxCategory.Text;
+                        var phoneNumber = textBoxPurchaseData.Text;
+                        var email = textBoxPrice.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(clientID, firstName, lastName, phoneNumber, email);
                         dataGridView.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
                         break;
 
-                    case "dataGridViewTechnicians":
-                        var technicianID = textBoxTechnicianID.Text;
-                        var firstNameTechnicians = textBoxFirstNameTechnicians.Text;
-                        var lastNameTechnicians = textBoxLastNameTechnicians.Text;
-                        var phoneNumberTechnicians = textBoxPhoneNumberTechnicians.Text;
-                        var emailTechnicians = textBoxEmailTechnicians.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(technicianID, firstNameTechnicians, lastNameTechnicians, phoneNumberTechnicians, emailTechnicians);
+                    case "dataGridViewEquipmentMovement":
+                        var technicianID = textBoxMovementID.Text;
+                        var firstNameEquipmentMovement = textBoxEquipmentIDEquipmentMovement.Text;
+                        var lastNameEquipmentMovement = textBoxMovementDate.Text;
+                        var phoneNumberEquipmentMovement = textBoxMovementType.Text;
+                        var emailEquipmentMovement = textBoxQuantinityEquipmentMovement.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(technicianID, firstNameEquipmentMovement, lastNameEquipmentMovement, phoneNumberEquipmentMovement, emailEquipmentMovement);
                         dataGridView.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
                         break;
 
-                    case "dataGridViewRepairOrders":
-                        var orderID = textBoxOrderID.Text;
-                        var clientIDRepairOrders = textBoxClientIDRepairOrders.Text;
-                        var technicianIDRepairOrders = textBoxTechnicianIDRepairOrders.Text;
-                        var orderDate = textBoxOrderDate.Text;
-                        var description = textBoxDescription.Text;
+                    case "dataGridViewSupplier":
+                        var orderID = textBoxSupplierID.Text;
+                        var clientIDSupplier = textBoxNameSupplier.Text;
+                        var technicianIDSupplier = textBoxContactPerson.Text;
+                        var orderDate = textBoxPhone.Text;
+                        var description = textBoxEmail.Text;
                         var status = textBoxStatus.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(orderID, clientIDRepairOrders, technicianIDRepairOrders, orderDate, description, status);
+                        dataGridView.Rows[selectedRowIndex].SetValues(orderID, clientIDSupplier, technicianIDSupplier, orderDate, description, status);
                         dataGridView.Rows[selectedRowIndex].Cells[6].Value = RowState.Modified;
                         break;
 
-                    case "dataGridViewSoftwareInstallation":
-                        var installationID = textBoxInstallationID.Text;
-                        var clientIDSoftwareInstallation = textBoxClientIDSoftwareInstallation.Text;
-                        var technicianIDSoftwareInstallation = textBoxTechnicianIDSoftwareInstallation.Text;
+                    case "dataGridViewEquipmentSupplier":
+                        var installationID = textBoxEquipmentIDEquipmentSupplier.Text;
+                        var clientIDEquipmentSupplier = textBoxSupplierIDEquipmentSupplier.Text;
+                        var technicianIDEquipmentSupplier = textBoxTechnicianIDEquipmentSupplier.Text;
                         var installationDate = textBoxInstallationDate.Text;
                         var softwareName = textBoxSoftwareName.Text;
                         var licenseKey = textBoxLicenseKey.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(installationID, clientIDSoftwareInstallation, technicianIDSoftwareInstallation, installationDate, softwareName, licenseKey);
+                        dataGridView.Rows[selectedRowIndex].SetValues(installationID, clientIDEquipmentSupplier, technicianIDEquipmentSupplier, installationDate, softwareName, licenseKey);
                         dataGridView.Rows[selectedRowIndex].Cells[6].Value = RowState.Modified;
                         break;
                 }
@@ -587,19 +586,19 @@ namespace test_DataBase
                 Paragraph title = doc.Paragraphs.Add();
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewClients":
+                    case "dataGridViewEquipment":
                         title.Range.Text = "Данные клиентов";
                         break;
 
-                    case "dataGridViewTechnicians":
+                    case "dataGridViewEquipmentMovement":
                         title.Range.Text = "Данные техников";
                         break;
 
-                    case "dataGridViewRepairOrders":
+                    case "dataGridViewSupplier":
                         title.Range.Text = "Данные заказов";
                         break;
 
-                    case "dataGridViewSoftwareInstallation":
+                    case "dataGridViewEquipmentSupplier":
                         title.Range.Text = "Данные установок ПО";
                         break;
                 }
@@ -641,19 +640,19 @@ namespace test_DataBase
                 string title = "";
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewClients":
+                    case "dataGridViewEquipment":
                         title = "Данные клиентов";
                         break;
 
-                    case "dataGridViewTechnicians":
+                    case "dataGridViewEquipmentMovement":
                         title = "Данные техников";
                         break;
 
-                    case "dataGridViewRepairOrders":
+                    case "dataGridViewSupplier":
                         title = "Данные заказов";
                         break;
 
-                    case "dataGridViewSoftwareInstallation":
+                    case "dataGridViewEquipmentSupplier":
                         title = "Данные установок ПО";
                         break;
                 }
@@ -702,19 +701,19 @@ namespace test_DataBase
                 string title = "";
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewClients":
+                    case "dataGridViewEquipment":
                         title = "Данные клиентов";
                         break;
 
-                    case "dataGridViewTechnicians":
+                    case "dataGridViewEquipmentMovement":
                         title = "Данные техников";
                         break;
 
-                    case "dataGridViewRepairOrders":
+                    case "dataGridViewSupplier":
                         title = "Данные заказов";
                         break;
 
-                    case "dataGridViewSoftwareInstallation":
+                    case "dataGridViewEquipmentSupplier":
                         title = "Данные установок ПО";
                         break;
                 }
@@ -753,10 +752,10 @@ namespace test_DataBase
         {
             try
             {
-                RefreshDataGrid(dataGridViewClients, "Clients");
-                RefreshDataGrid(dataGridViewTechnicians, "Technicians");
-                RefreshDataGrid(dataGridViewRepairOrders, "RepairOrders");
-                RefreshDataGrid(dataGridViewSoftwareInstallation, "SoftwareInstallation");
+                RefreshDataGrid(dataGridViewEquipment, "Equipment");
+                RefreshDataGrid(dataGridViewEquipmentMovement, "EquipmentMovement");
+                RefreshDataGrid(dataGridViewSupplier, "Supplier");
+                RefreshDataGrid(dataGridViewEquipmentSupplier, "EquipmentSupplier");
                 ClearFields();
             }
             catch (Exception ex)
@@ -786,7 +785,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormClients addForm = new AddFormClients();
+                AddFormEquipment addForm = new AddFormEquipment();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -801,7 +800,7 @@ namespace test_DataBase
             {
                 if (admin)
                 {
-                    AddFormTechnicians addForm = new AddFormTechnicians();
+                    AddFormEquipmentMovement addForm = new AddFormEquipmentMovement();
                     addForm.Show();
                 }
                 else
@@ -819,7 +818,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormRepairOrders addForm = new AddFormRepairOrders();
+                AddFormSupplier addForm = new AddFormSupplier();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -832,7 +831,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormSoftwareInstallation addForm = new AddFormSoftwareInstallation();
+                AddFormEquipmentSupplier addForm = new AddFormEquipmentSupplier();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -845,7 +844,7 @@ namespace test_DataBase
         {
             try
             {
-                DeleteRow(dataGridViewClients);
+                DeleteRow(dataGridViewEquipment);
                 ClearFields();
             }
             catch (Exception ex)
@@ -858,7 +857,7 @@ namespace test_DataBase
         {
             try
             {
-                DeleteRow(dataGridViewTechnicians);
+                DeleteRow(dataGridViewEquipmentMovement);
                 ClearFields();
             }
             catch (Exception ex)
@@ -871,7 +870,7 @@ namespace test_DataBase
         {
             try
             {
-                DeleteRow(dataGridViewRepairOrders);
+                DeleteRow(dataGridViewSupplier);
                 ClearFields();
             }
             catch (Exception ex)
@@ -884,7 +883,7 @@ namespace test_DataBase
         {
             try
             {
-                DeleteRow(dataGridViewSoftwareInstallation);
+                DeleteRow(dataGridViewEquipmentSupplier);
                 ClearFields();
             }
             catch (Exception ex)
@@ -897,7 +896,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewClients);
+                Change(dataGridViewEquipment);
                 ClearFields();
             }
             catch (Exception ex)
@@ -910,7 +909,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewTechnicians);
+                Change(dataGridViewEquipmentMovement);
                 ClearFields();
             }
             catch (Exception ex)
@@ -923,7 +922,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewRepairOrders);
+                Change(dataGridViewSupplier);
                 ClearFields();
             }
             catch (Exception ex)
@@ -936,7 +935,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewSoftwareInstallation);
+                Change(dataGridViewEquipmentSupplier);
                 ClearFields();
             }
             catch (Exception ex)
@@ -949,7 +948,7 @@ namespace test_DataBase
         {
             try
             {
-                UpdateBase(dataGridViewClients);
+                UpdateBase(dataGridViewEquipment);
             }
             catch (Exception ex)
             {
@@ -963,7 +962,7 @@ namespace test_DataBase
             {
                 if (admin)
                 {
-                    UpdateBase(dataGridViewTechnicians);
+                    UpdateBase(dataGridViewEquipmentMovement);
                 }
                 else
                 {
@@ -980,7 +979,7 @@ namespace test_DataBase
         {
             try
             {
-                UpdateBase(dataGridViewRepairOrders);
+                UpdateBase(dataGridViewSupplier);
             }
             catch (Exception ex)
             {
@@ -992,7 +991,7 @@ namespace test_DataBase
         {
             try
             {
-                UpdateBase(dataGridViewSoftwareInstallation);
+                UpdateBase(dataGridViewEquipmentSupplier);
             }
             catch (Exception ex)
             {
@@ -1004,7 +1003,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToWord(dataGridViewClients);
+                ExportToWord(dataGridViewEquipment);
             }
             catch (Exception ex)
             {
@@ -1016,7 +1015,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToWord(dataGridViewTechnicians);
+                ExportToWord(dataGridViewEquipmentMovement);
             }
             catch (Exception ex)
             {
@@ -1028,7 +1027,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToWord(dataGridViewRepairOrders);
+                ExportToWord(dataGridViewSupplier);
             }
             catch (Exception ex)
             {
@@ -1040,7 +1039,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToWord(dataGridViewSoftwareInstallation);
+                ExportToWord(dataGridViewEquipmentSupplier);
             }
             catch (Exception ex)
             {
@@ -1052,7 +1051,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToExcel(dataGridViewClients);
+                ExportToExcel(dataGridViewEquipment);
             }
             catch (Exception ex)
             {
@@ -1064,7 +1063,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToExcel(dataGridViewTechnicians);
+                ExportToExcel(dataGridViewEquipmentMovement);
             }
             catch (Exception ex)
             {
@@ -1076,7 +1075,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToExcel(dataGridViewRepairOrders);
+                ExportToExcel(dataGridViewSupplier);
             }
             catch (Exception ex)
             {
@@ -1088,7 +1087,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToExcel(dataGridViewSoftwareInstallation);
+                ExportToExcel(dataGridViewEquipmentSupplier);
             }
             catch (Exception ex)
             {
@@ -1100,7 +1099,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToPDF(dataGridViewClients);
+                ExportToPDF(dataGridViewEquipment);
             }
             catch (Exception ex)
             {
@@ -1112,7 +1111,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToPDF(dataGridViewTechnicians);
+                ExportToPDF(dataGridViewEquipmentMovement);
             }
             catch (Exception ex)
             {
@@ -1124,7 +1123,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToPDF(dataGridViewRepairOrders);
+                ExportToPDF(dataGridViewSupplier);
             }
             catch (Exception ex)
             {
@@ -1136,7 +1135,7 @@ namespace test_DataBase
         {
             try
             {
-                ExportToPDF(dataGridViewSoftwareInstallation);
+                ExportToPDF(dataGridViewEquipmentSupplier);
             }
             catch (Exception ex)
             {
@@ -1151,7 +1150,7 @@ namespace test_DataBase
                 selectedRow = e.RowIndex;
                 if (e.RowIndex >= 0)
                 {
-                    DataGridView_CellClick(dataGridViewClients, selectedRow);
+                    DataGridView_CellClick(dataGridViewEquipment, selectedRow);
                 }
             }
             catch (Exception ex)
@@ -1167,7 +1166,7 @@ namespace test_DataBase
                 selectedRow = e.RowIndex;
                 if (e.RowIndex >= 0)
                 {
-                    DataGridView_CellClick(dataGridViewTechnicians, selectedRow);
+                    DataGridView_CellClick(dataGridViewEquipmentMovement, selectedRow);
                 }
             }
             catch (Exception ex)
@@ -1183,7 +1182,7 @@ namespace test_DataBase
                 selectedRow = e.RowIndex;
                 if (e.RowIndex >= 0)
                 {
-                    DataGridView_CellClick(dataGridViewRepairOrders, selectedRow);
+                    DataGridView_CellClick(dataGridViewSupplier, selectedRow);
                 }
             }
             catch (Exception ex)
@@ -1199,7 +1198,7 @@ namespace test_DataBase
                 selectedRow = e.RowIndex;
                 if (e.RowIndex >= 0)
                 {
-                    DataGridView_CellClick(dataGridViewSoftwareInstallation, selectedRow);
+                    DataGridView_CellClick(dataGridViewEquipmentSupplier, selectedRow);
                 }
             }
             catch (Exception ex)
@@ -1212,7 +1211,7 @@ namespace test_DataBase
         {
             try
             {
-                Search(dataGridViewClients);
+                Search(dataGridViewEquipment);
             }
             catch (Exception ex)
             {
@@ -1224,7 +1223,7 @@ namespace test_DataBase
         {
             try
             {
-                Search(dataGridViewTechnicians);
+                Search(dataGridViewEquipmentMovement);
             }
             catch (Exception ex)
             {
@@ -1236,7 +1235,7 @@ namespace test_DataBase
         {
             try
             {
-                Search(dataGridViewRepairOrders);
+                Search(dataGridViewSupplier);
             }
             catch (Exception ex)
             {
@@ -1248,7 +1247,7 @@ namespace test_DataBase
         {
             try
             {
-                Search(dataGridViewSoftwareInstallation);
+                Search(dataGridViewEquipmentSupplier);
             }
             catch (Exception ex)
             {
