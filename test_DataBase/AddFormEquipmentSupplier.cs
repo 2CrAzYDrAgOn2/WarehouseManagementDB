@@ -24,12 +24,9 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var installationDate = textBoxInstallationDate.Text;
-                var softwareName = textBoxSoftwareName.Text;
-                var licenseKey = textBoxLicenseKey.Text;
-                if (int.TryParse(textBoxClientIDSoftwareInstallation.Text, out int clientIDSoftwareInstallation) && int.TryParse(textBoxTechnicianIDSoftwareInstallation.Text, out int technicianIDSoftwareInstallation))
+                if (int.TryParse(textBoxEquipmentIDEquipmentSupplier.Text, out int equipmentID) && int.TryParse(textBoxSupplierIDEquipmentSupplier.Text, out int supplierID))
                 {
-                    var addQuery = $"insert into SoftwareInstallation (ClientID, TechnicianID, InstallationDate, SoftwareName, LicenseKey) values ('{clientIDSoftwareInstallation}', '{technicianIDSoftwareInstallation}', '{installationDate}', '{softwareName}', '{licenseKey}')";
+                    var addQuery = $"insert into EquipmentSupplier (EquipmentID, SupplierID) values ('{equipmentID}', '{supplierID}')";
                     var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
                     sqlCommand.ExecuteNonQuery();
                     MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);

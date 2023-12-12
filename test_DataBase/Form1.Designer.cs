@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelControl = new System.Windows.Forms.Panel();
             this.buttonPDFEquipment = new System.Windows.Forms.Button();
@@ -42,6 +39,10 @@
             this.buttonNewEquipment = new System.Windows.Forms.Button();
             this.labelControl = new System.Windows.Forms.Label();
             this.panelRecord = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBoxQuantinity = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBoxLocation = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.textBoxPurchaseData = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.labelRecord = new System.Windows.Forms.Label();
             this.dataGridViewEquipment = new System.Windows.Forms.DataGridView();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.buttonSearchEquipment = new System.Windows.Forms.Button();
             this.buttonClearEquipment = new System.Windows.Forms.Button();
             this.buttonRefreshEquipment = new System.Windows.Forms.Button();
             this.textBoxSearchEquipment = new System.Windows.Forms.TextBox();
@@ -85,7 +85,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewEquipmentMovement = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonSearchEquipmentMovement = new System.Windows.Forms.Button();
             this.buttonClearEquipmentMovement = new System.Windows.Forms.Button();
             this.buttonRefreshEquipmentMovement = new System.Windows.Forms.Button();
             this.textBoxSearchEquipmentMovement = new System.Windows.Forms.TextBox();
@@ -114,7 +113,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewSupplier = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonSearchSupplier = new System.Windows.Forms.Button();
             this.buttonClearSupplier = new System.Windows.Forms.Button();
             this.buttonRefreshSupplier = new System.Windows.Forms.Button();
             this.textBoxSearchSupplier = new System.Windows.Forms.TextBox();
@@ -137,16 +135,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridViewEquipmentSupplier = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.buttonSearchEquipmentSupplier = new System.Windows.Forms.Button();
             this.buttonClearEquipmentSupplier = new System.Windows.Forms.Button();
             this.buttonRefreshEquipmentSupplier = new System.Windows.Forms.Button();
             this.textBoxSearchEquipmentSupplier = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBoxQuantinity = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBoxLocation = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelRecord.SuspendLayout();
@@ -169,31 +161,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEquipmentSupplier)).BeginInit();
             this.panel9.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.информацияToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(768, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // информацияToolStripMenuItem
-            // 
-            this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
-            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.информацияToolStripMenuItem.Text = "Информация";
             // 
             // tabPage1
             // 
@@ -232,7 +199,6 @@
             this.buttonPDFEquipment.TabIndex = 4;
             this.buttonPDFEquipment.Text = "Вывод в PDF";
             this.buttonPDFEquipment.UseVisualStyleBackColor = true;
-            this.buttonPDFEquipment.Click += new System.EventHandler(this.ButtonPDFClients_Click);
             // 
             // buttonSaveEquipment
             // 
@@ -242,7 +208,6 @@
             this.buttonSaveEquipment.TabIndex = 3;
             this.buttonSaveEquipment.Text = "Сохранить";
             this.buttonSaveEquipment.UseVisualStyleBackColor = true;
-            this.buttonSaveEquipment.Click += new System.EventHandler(this.ButtonSaveClients_Click);
             // 
             // buttonExcelEquipment
             // 
@@ -252,7 +217,6 @@
             this.buttonExcelEquipment.TabIndex = 5;
             this.buttonExcelEquipment.Text = "Вывод в Excel";
             this.buttonExcelEquipment.UseVisualStyleBackColor = true;
-            this.buttonExcelEquipment.Click += new System.EventHandler(this.ButtonExcelClients_Click);
             // 
             // buttonChangeEquipment
             // 
@@ -262,7 +226,6 @@
             this.buttonChangeEquipment.TabIndex = 2;
             this.buttonChangeEquipment.Text = "Изменить";
             this.buttonChangeEquipment.UseVisualStyleBackColor = true;
-            this.buttonChangeEquipment.Click += new System.EventHandler(this.ButtonChangeClients_Click);
             // 
             // buttonWordEquipment
             // 
@@ -272,7 +235,6 @@
             this.buttonWordEquipment.TabIndex = 6;
             this.buttonWordEquipment.Text = "Вывод в Word";
             this.buttonWordEquipment.UseVisualStyleBackColor = true;
-            this.buttonWordEquipment.Click += new System.EventHandler(this.ButtonWordClients_Click);
             // 
             // buttonDeleteEquipment
             // 
@@ -282,7 +244,6 @@
             this.buttonDeleteEquipment.TabIndex = 1;
             this.buttonDeleteEquipment.Text = "Удалить";
             this.buttonDeleteEquipment.UseVisualStyleBackColor = true;
-            this.buttonDeleteEquipment.Click += new System.EventHandler(this.ButtonDeleteClients_Click);
             // 
             // buttonNewEquipment
             // 
@@ -292,7 +253,6 @@
             this.buttonNewEquipment.TabIndex = 0;
             this.buttonNewEquipment.Text = "Новая запись";
             this.buttonNewEquipment.UseVisualStyleBackColor = true;
-            this.buttonNewEquipment.Click += new System.EventHandler(this.ButtonNewClients_Click);
             // 
             // labelControl
             // 
@@ -325,6 +285,40 @@
             this.panelRecord.Name = "panelRecord";
             this.panelRecord.Size = new System.Drawing.Size(524, 481);
             this.panelRecord.TabIndex = 2;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(55, 266);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(69, 13);
+            this.label30.TabIndex = 18;
+            this.label30.Text = "Количество:";
+            // 
+            // textBoxQuantinity
+            // 
+            this.textBoxQuantinity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxQuantinity.Location = new System.Drawing.Point(130, 254);
+            this.textBoxQuantinity.Name = "textBoxQuantinity";
+            this.textBoxQuantinity.Size = new System.Drawing.Size(391, 33);
+            this.textBoxQuantinity.TabIndex = 17;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(39, 305);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(85, 13);
+            this.label31.TabIndex = 16;
+            this.label31.Text = "Расположение:";
+            // 
+            // textBoxLocation
+            // 
+            this.textBoxLocation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLocation.Location = new System.Drawing.Point(130, 293);
+            this.textBoxLocation.Name = "textBoxLocation";
+            this.textBoxLocation.Size = new System.Drawing.Size(391, 33);
+            this.textBoxLocation.TabIndex = 15;
             // 
             // label19
             // 
@@ -432,11 +426,9 @@
             this.dataGridViewEquipment.RowHeadersWidth = 62;
             this.dataGridViewEquipment.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewEquipment.TabIndex = 1;
-            this.dataGridViewEquipment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewClients_CellClick);
             // 
             // panelTitle
             // 
-            this.panelTitle.Controls.Add(this.buttonSearchEquipment);
             this.panelTitle.Controls.Add(this.buttonClearEquipment);
             this.panelTitle.Controls.Add(this.buttonRefreshEquipment);
             this.panelTitle.Controls.Add(this.textBoxSearchEquipment);
@@ -446,21 +438,11 @@
             this.panelTitle.Size = new System.Drawing.Size(751, 73);
             this.panelTitle.TabIndex = 0;
             // 
-            // buttonSearchEquipment
-            // 
-            this.buttonSearchEquipment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchEquipment.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchEquipment.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchEquipment.Name = "buttonSearchEquipment";
-            this.buttonSearchEquipment.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchEquipment.TabIndex = 4;
-            this.buttonSearchEquipment.UseVisualStyleBackColor = true;
-            // 
             // buttonClearEquipment
             // 
             this.buttonClearEquipment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearEquipment.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearEquipment.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearEquipment.Location = new System.Drawing.Point(453, 3);
             this.buttonClearEquipment.Name = "buttonClearEquipment";
             this.buttonClearEquipment.Size = new System.Drawing.Size(67, 67);
             this.buttonClearEquipment.TabIndex = 3;
@@ -471,7 +453,7 @@
             // 
             this.buttonRefreshEquipment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshEquipment.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshEquipment.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshEquipment.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshEquipment.Name = "buttonRefreshEquipment";
             this.buttonRefreshEquipment.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshEquipment.TabIndex = 2;
@@ -485,7 +467,6 @@
             this.textBoxSearchEquipment.Name = "textBoxSearchEquipment";
             this.textBoxSearchEquipment.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchEquipment.TabIndex = 1;
-            this.textBoxSearchEquipment.TextChanged += new System.EventHandler(this.TextBoxSearchClients_TextChanged);
             // 
             // labelTitle
             // 
@@ -503,7 +484,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(769, 900);
@@ -547,7 +528,6 @@
             this.buttonPDFEquipmentMovement.TabIndex = 4;
             this.buttonPDFEquipmentMovement.Text = "Вывод в PDF";
             this.buttonPDFEquipmentMovement.UseVisualStyleBackColor = true;
-            this.buttonPDFEquipmentMovement.Click += new System.EventHandler(this.ButtonPDFTechnicians_Click);
             // 
             // buttonSaveEquipmentMovement
             // 
@@ -557,7 +537,6 @@
             this.buttonSaveEquipmentMovement.TabIndex = 3;
             this.buttonSaveEquipmentMovement.Text = "Сохранить";
             this.buttonSaveEquipmentMovement.UseVisualStyleBackColor = true;
-            this.buttonSaveEquipmentMovement.Click += new System.EventHandler(this.ButtonSaveTechnicians_Click);
             // 
             // buttonExcelEquipmentMovement
             // 
@@ -567,7 +546,6 @@
             this.buttonExcelEquipmentMovement.TabIndex = 5;
             this.buttonExcelEquipmentMovement.Text = "Вывод в Excel";
             this.buttonExcelEquipmentMovement.UseVisualStyleBackColor = true;
-            this.buttonExcelEquipmentMovement.Click += new System.EventHandler(this.ButtonExcelTechnicians_Click);
             // 
             // buttonChangeEquipmentMovement
             // 
@@ -577,7 +555,6 @@
             this.buttonChangeEquipmentMovement.TabIndex = 2;
             this.buttonChangeEquipmentMovement.Text = "Изменить";
             this.buttonChangeEquipmentMovement.UseVisualStyleBackColor = true;
-            this.buttonChangeEquipmentMovement.Click += new System.EventHandler(this.ButtonChangeTechnicians_Click);
             // 
             // buttonWordEquipmentMovement
             // 
@@ -587,7 +564,6 @@
             this.buttonWordEquipmentMovement.TabIndex = 6;
             this.buttonWordEquipmentMovement.Text = "Вывод в Word";
             this.buttonWordEquipmentMovement.UseVisualStyleBackColor = true;
-            this.buttonWordEquipmentMovement.Click += new System.EventHandler(this.ButtonWordTechnicians_Click);
             // 
             // buttonDeleteEquipmentMovement
             // 
@@ -597,7 +573,6 @@
             this.buttonDeleteEquipmentMovement.TabIndex = 1;
             this.buttonDeleteEquipmentMovement.Text = "Удалить";
             this.buttonDeleteEquipmentMovement.UseVisualStyleBackColor = true;
-            this.buttonDeleteEquipmentMovement.Click += new System.EventHandler(this.ButtonDeleteTechnicians_Click);
             // 
             // buttonNewEquipmentMovement
             // 
@@ -607,7 +582,6 @@
             this.buttonNewEquipmentMovement.TabIndex = 0;
             this.buttonNewEquipmentMovement.Text = "Новая запись";
             this.buttonNewEquipmentMovement.UseVisualStyleBackColor = true;
-            this.buttonNewEquipmentMovement.Click += new System.EventHandler(this.ButtonNewTechnicians_Click);
             // 
             // label1
             // 
@@ -743,11 +717,9 @@
             this.dataGridViewEquipmentMovement.RowHeadersWidth = 62;
             this.dataGridViewEquipmentMovement.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewEquipmentMovement.TabIndex = 1;
-            this.dataGridViewEquipmentMovement.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewTechnicians_CellClick);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.buttonSearchEquipmentMovement);
             this.panel3.Controls.Add(this.buttonClearEquipmentMovement);
             this.panel3.Controls.Add(this.buttonRefreshEquipmentMovement);
             this.panel3.Controls.Add(this.textBoxSearchEquipmentMovement);
@@ -757,21 +729,11 @@
             this.panel3.Size = new System.Drawing.Size(751, 73);
             this.panel3.TabIndex = 0;
             // 
-            // buttonSearchEquipmentMovement
-            // 
-            this.buttonSearchEquipmentMovement.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchEquipmentMovement.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchEquipmentMovement.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchEquipmentMovement.Name = "buttonSearchEquipmentMovement";
-            this.buttonSearchEquipmentMovement.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchEquipmentMovement.TabIndex = 4;
-            this.buttonSearchEquipmentMovement.UseVisualStyleBackColor = true;
-            // 
             // buttonClearEquipmentMovement
             // 
             this.buttonClearEquipmentMovement.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearEquipmentMovement.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearEquipmentMovement.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearEquipmentMovement.Location = new System.Drawing.Point(453, 3);
             this.buttonClearEquipmentMovement.Name = "buttonClearEquipmentMovement";
             this.buttonClearEquipmentMovement.Size = new System.Drawing.Size(67, 67);
             this.buttonClearEquipmentMovement.TabIndex = 3;
@@ -782,7 +744,7 @@
             // 
             this.buttonRefreshEquipmentMovement.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshEquipmentMovement.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshEquipmentMovement.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshEquipmentMovement.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshEquipmentMovement.Name = "buttonRefreshEquipmentMovement";
             this.buttonRefreshEquipmentMovement.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshEquipmentMovement.TabIndex = 2;
@@ -796,7 +758,6 @@
             this.textBoxSearchEquipmentMovement.Name = "textBoxSearchEquipmentMovement";
             this.textBoxSearchEquipmentMovement.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchEquipmentMovement.TabIndex = 1;
-            this.textBoxSearchEquipmentMovement.TextChanged += new System.EventHandler(this.TextBoxSearchTechnicians_TextChanged);
             // 
             // label5
             // 
@@ -845,7 +806,6 @@
             this.buttonPDFSupplier.TabIndex = 4;
             this.buttonPDFSupplier.Text = "Вывод в PDF";
             this.buttonPDFSupplier.UseVisualStyleBackColor = true;
-            this.buttonPDFSupplier.Click += new System.EventHandler(this.ButtonPDFRepairOrders_Click);
             // 
             // buttonSaveSupplier
             // 
@@ -855,7 +815,6 @@
             this.buttonSaveSupplier.TabIndex = 3;
             this.buttonSaveSupplier.Text = "Сохранить";
             this.buttonSaveSupplier.UseVisualStyleBackColor = true;
-            this.buttonSaveSupplier.Click += new System.EventHandler(this.ButtonSaveRepairOrders_Click);
             // 
             // buttonExcelSupplier
             // 
@@ -865,7 +824,6 @@
             this.buttonExcelSupplier.TabIndex = 5;
             this.buttonExcelSupplier.Text = "Вывод в Excel";
             this.buttonExcelSupplier.UseVisualStyleBackColor = true;
-            this.buttonExcelSupplier.Click += new System.EventHandler(this.ButtonExcelRepairOrders_Click);
             // 
             // buttonChangeSupplier
             // 
@@ -875,7 +833,6 @@
             this.buttonChangeSupplier.TabIndex = 2;
             this.buttonChangeSupplier.Text = "Изменить";
             this.buttonChangeSupplier.UseVisualStyleBackColor = true;
-            this.buttonChangeSupplier.Click += new System.EventHandler(this.ButtonChangeRepairOrders_Click);
             // 
             // buttonWordSupplier
             // 
@@ -885,7 +842,6 @@
             this.buttonWordSupplier.TabIndex = 6;
             this.buttonWordSupplier.Text = "Вывод в Word";
             this.buttonWordSupplier.UseVisualStyleBackColor = true;
-            this.buttonWordSupplier.Click += new System.EventHandler(this.ButtonWordRepairOrders_Click);
             // 
             // buttonDeleteSupplier
             // 
@@ -895,7 +851,6 @@
             this.buttonDeleteSupplier.TabIndex = 1;
             this.buttonDeleteSupplier.Text = "Удалить";
             this.buttonDeleteSupplier.UseVisualStyleBackColor = true;
-            this.buttonDeleteSupplier.Click += new System.EventHandler(this.ButtonDeleteRepairOrders_Click);
             // 
             // buttonNewSupplier
             // 
@@ -905,7 +860,6 @@
             this.buttonNewSupplier.TabIndex = 0;
             this.buttonNewSupplier.Text = "Новая запись";
             this.buttonNewSupplier.UseVisualStyleBackColor = true;
-            this.buttonNewSupplier.Click += new System.EventHandler(this.ButtonNewRepairOrders_Click);
             // 
             // label6
             // 
@@ -1041,11 +995,9 @@
             this.dataGridViewSupplier.RowHeadersWidth = 62;
             this.dataGridViewSupplier.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewSupplier.TabIndex = 1;
-            this.dataGridViewSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewRepairOrders_CellClick);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.buttonSearchSupplier);
             this.panel6.Controls.Add(this.buttonClearSupplier);
             this.panel6.Controls.Add(this.buttonRefreshSupplier);
             this.panel6.Controls.Add(this.textBoxSearchSupplier);
@@ -1055,21 +1007,11 @@
             this.panel6.Size = new System.Drawing.Size(751, 73);
             this.panel6.TabIndex = 0;
             // 
-            // buttonSearchSupplier
-            // 
-            this.buttonSearchSupplier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchSupplier.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchSupplier.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchSupplier.Name = "buttonSearchSupplier";
-            this.buttonSearchSupplier.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchSupplier.TabIndex = 4;
-            this.buttonSearchSupplier.UseVisualStyleBackColor = true;
-            // 
             // buttonClearSupplier
             // 
             this.buttonClearSupplier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearSupplier.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearSupplier.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearSupplier.Location = new System.Drawing.Point(453, 3);
             this.buttonClearSupplier.Name = "buttonClearSupplier";
             this.buttonClearSupplier.Size = new System.Drawing.Size(67, 67);
             this.buttonClearSupplier.TabIndex = 3;
@@ -1080,7 +1022,7 @@
             // 
             this.buttonRefreshSupplier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshSupplier.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshSupplier.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshSupplier.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshSupplier.Name = "buttonRefreshSupplier";
             this.buttonRefreshSupplier.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshSupplier.TabIndex = 2;
@@ -1094,7 +1036,6 @@
             this.textBoxSearchSupplier.Name = "textBoxSearchSupplier";
             this.textBoxSearchSupplier.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchSupplier.TabIndex = 1;
-            this.textBoxSearchSupplier.TextChanged += new System.EventHandler(this.TextBoxSearchRepairOrders_TextChanged);
             // 
             // label10
             // 
@@ -1143,7 +1084,6 @@
             this.buttonPDFEquipmentSupplier.TabIndex = 4;
             this.buttonPDFEquipmentSupplier.Text = "Вывод в PDF";
             this.buttonPDFEquipmentSupplier.UseVisualStyleBackColor = true;
-            this.buttonPDFEquipmentSupplier.Click += new System.EventHandler(this.ButtonPDFSoftwareInstallation_Click);
             // 
             // buttonSaveEquipmentSupplier
             // 
@@ -1153,7 +1093,6 @@
             this.buttonSaveEquipmentSupplier.TabIndex = 3;
             this.buttonSaveEquipmentSupplier.Text = "Сохранить";
             this.buttonSaveEquipmentSupplier.UseVisualStyleBackColor = true;
-            this.buttonSaveEquipmentSupplier.Click += new System.EventHandler(this.ButtonSaveSoftwareInstallation_Click);
             // 
             // buttonExcelEquipmentSupplier
             // 
@@ -1163,7 +1102,6 @@
             this.buttonExcelEquipmentSupplier.TabIndex = 5;
             this.buttonExcelEquipmentSupplier.Text = "Вывод в Excel";
             this.buttonExcelEquipmentSupplier.UseVisualStyleBackColor = true;
-            this.buttonExcelEquipmentSupplier.Click += new System.EventHandler(this.ButtonExcelSoftwareInstallation_Click);
             // 
             // buttonChangeEquipmentSupplier
             // 
@@ -1173,7 +1111,6 @@
             this.buttonChangeEquipmentSupplier.TabIndex = 2;
             this.buttonChangeEquipmentSupplier.Text = "Изменить";
             this.buttonChangeEquipmentSupplier.UseVisualStyleBackColor = true;
-            this.buttonChangeEquipmentSupplier.Click += new System.EventHandler(this.ButtonChangeSoftwareInstallation_Click);
             // 
             // buttonWordEquipmentSupplier
             // 
@@ -1183,7 +1120,6 @@
             this.buttonWordEquipmentSupplier.TabIndex = 6;
             this.buttonWordEquipmentSupplier.Text = "Вывод в Word";
             this.buttonWordEquipmentSupplier.UseVisualStyleBackColor = true;
-            this.buttonWordEquipmentSupplier.Click += new System.EventHandler(this.ButtonWordSoftwareInstallation_Click);
             // 
             // buttonDeleteEquipmentSupplier
             // 
@@ -1193,7 +1129,6 @@
             this.buttonDeleteEquipmentSupplier.TabIndex = 1;
             this.buttonDeleteEquipmentSupplier.Text = "Удалить";
             this.buttonDeleteEquipmentSupplier.UseVisualStyleBackColor = true;
-            this.buttonDeleteEquipmentSupplier.Click += new System.EventHandler(this.ButtonDeleteSoftwareInstallation_Click);
             // 
             // buttonNewEquipmentSupplier
             // 
@@ -1203,7 +1138,6 @@
             this.buttonNewEquipmentSupplier.TabIndex = 0;
             this.buttonNewEquipmentSupplier.Text = "Новая запись";
             this.buttonNewEquipmentSupplier.UseVisualStyleBackColor = true;
-            this.buttonNewEquipmentSupplier.Click += new System.EventHandler(this.ButtonNewSoftwareInstallation_Click);
             // 
             // label11
             // 
@@ -1282,11 +1216,9 @@
             this.dataGridViewEquipmentSupplier.RowHeadersWidth = 62;
             this.dataGridViewEquipmentSupplier.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewEquipmentSupplier.TabIndex = 1;
-            this.dataGridViewEquipmentSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewSoftwareInstallation_CellClick);
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.buttonSearchEquipmentSupplier);
             this.panel9.Controls.Add(this.buttonClearEquipmentSupplier);
             this.panel9.Controls.Add(this.buttonRefreshEquipmentSupplier);
             this.panel9.Controls.Add(this.textBoxSearchEquipmentSupplier);
@@ -1296,21 +1228,11 @@
             this.panel9.Size = new System.Drawing.Size(751, 73);
             this.panel9.TabIndex = 0;
             // 
-            // buttonSearchEquipmentSupplier
-            // 
-            this.buttonSearchEquipmentSupplier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchEquipmentSupplier.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchEquipmentSupplier.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchEquipmentSupplier.Name = "buttonSearchEquipmentSupplier";
-            this.buttonSearchEquipmentSupplier.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchEquipmentSupplier.TabIndex = 4;
-            this.buttonSearchEquipmentSupplier.UseVisualStyleBackColor = true;
-            // 
             // buttonClearEquipmentSupplier
             // 
             this.buttonClearEquipmentSupplier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearEquipmentSupplier.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearEquipmentSupplier.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearEquipmentSupplier.Location = new System.Drawing.Point(453, 3);
             this.buttonClearEquipmentSupplier.Name = "buttonClearEquipmentSupplier";
             this.buttonClearEquipmentSupplier.Size = new System.Drawing.Size(67, 67);
             this.buttonClearEquipmentSupplier.TabIndex = 3;
@@ -1321,7 +1243,7 @@
             // 
             this.buttonRefreshEquipmentSupplier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshEquipmentSupplier.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshEquipmentSupplier.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshEquipmentSupplier.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshEquipmentSupplier.Name = "buttonRefreshEquipmentSupplier";
             this.buttonRefreshEquipmentSupplier.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshEquipmentSupplier.TabIndex = 2;
@@ -1335,7 +1257,6 @@
             this.textBoxSearchEquipmentSupplier.Name = "textBoxSearchEquipmentSupplier";
             this.textBoxSearchEquipmentSupplier.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchEquipmentSupplier.TabIndex = 1;
-            this.textBoxSearchEquipmentSupplier.TextChanged += new System.EventHandler(this.TextBoxSearchSoftwareInstallation_TextChanged);
             // 
             // label15
             // 
@@ -1347,53 +1268,15 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Поставки обор.";
             // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(55, 266);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(69, 13);
-            this.label30.TabIndex = 18;
-            this.label30.Text = "Количество:";
-            // 
-            // textBoxQuantinity
-            // 
-            this.textBoxQuantinity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxQuantinity.Location = new System.Drawing.Point(130, 254);
-            this.textBoxQuantinity.Name = "textBoxQuantinity";
-            this.textBoxQuantinity.Size = new System.Drawing.Size(391, 33);
-            this.textBoxQuantinity.TabIndex = 17;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(39, 305);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(85, 13);
-            this.label31.TabIndex = 16;
-            this.label31.Text = "Расположение:";
-            // 
-            // textBoxLocation
-            // 
-            this.textBoxLocation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLocation.Location = new System.Drawing.Point(130, 293);
-            this.textBoxLocation.Name = "textBoxLocation";
-            this.textBoxLocation.Size = new System.Drawing.Size(391, 33);
-            this.textBoxLocation.TabIndex = 15;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 926);
+            this.ClientSize = new System.Drawing.Size(767, 899);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Учёт складского оборудования";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panelControl.ResumeLayout(false);
@@ -1428,15 +1311,10 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button buttonSaveEquipment;
@@ -1452,7 +1330,6 @@
         private System.Windows.Forms.Label labelRecord;
         private System.Windows.Forms.DataGridView dataGridViewEquipment;
         private System.Windows.Forms.Panel panelTitle;
-        private System.Windows.Forms.Button buttonSearchEquipment;
         private System.Windows.Forms.Button buttonClearEquipment;
         private System.Windows.Forms.Button buttonRefreshEquipment;
         private System.Windows.Forms.TextBox textBoxSearchEquipment;
@@ -1479,7 +1356,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridViewEquipmentMovement;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button buttonSearchEquipmentMovement;
         private System.Windows.Forms.Button buttonClearEquipmentMovement;
         private System.Windows.Forms.Button buttonRefreshEquipmentMovement;
         private System.Windows.Forms.TextBox textBoxSearchEquipmentMovement;
@@ -1502,7 +1378,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridViewSupplier;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button buttonSearchSupplier;
         private System.Windows.Forms.Button buttonClearSupplier;
         private System.Windows.Forms.Button buttonRefreshSupplier;
         private System.Windows.Forms.TextBox textBoxSearchSupplier;
@@ -1525,7 +1400,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridViewEquipmentSupplier;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button buttonSearchEquipmentSupplier;
         private System.Windows.Forms.Button buttonClearEquipmentSupplier;
         private System.Windows.Forms.Button buttonRefreshEquipmentSupplier;
         private System.Windows.Forms.TextBox textBoxSearchEquipmentSupplier;

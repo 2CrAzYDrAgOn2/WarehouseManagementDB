@@ -24,20 +24,14 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var orderDate = textBoxOrderDate.Text;
-                var description = textBoxDescription.Text;
-                var status = textBoxStatus.Text;
-                if (int.TryParse(textBoxClientIDRepairOrders.Text, out int clientIDRepairOrders) && int.TryParse(textBoxTechnicianIDRepairOrders.Text, out int technicianIDRepairOrders))
-                {
-                    var addQuery = $"insert into RepairOrders (ClientID, TechnicianID, OrderDate, Description, Status) values ('{clientIDRepairOrders}', '{technicianIDRepairOrders}', '{orderDate}', '{description}', '{status}')";
-                    var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
-                    sqlCommand.ExecuteNonQuery();
-                    MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Цена должна иметь числовой формат!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                var name = textBoxNameSupplier.Text;
+                var contactPerson = textBoxContactPerson.Text;
+                var phone = textBoxPhone.Text;
+                var email = textBoxEmail.Text;
+                var addQuery = $"insert into Supplier (Name, ContactPerson, Phone, Email) values ('{name}', '{contactPerson}', '{phone}', '{email}')";
+                var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

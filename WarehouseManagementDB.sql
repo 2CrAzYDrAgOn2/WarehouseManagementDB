@@ -6,7 +6,7 @@ CREATE TABLE Equipment (
     Name NVARCHAR(100) NOT NULL,
     Category NVARCHAR(50),
     PurchaseDate DATE,
-    Price DECIMAL(18, 2),
+    Price INT,
     Quantity INT,
     Location NVARCHAR(50)
 );
@@ -45,9 +45,9 @@ CREATE TABLE Registration (
 
 INSERT INTO Equipment (Name, Category, PurchaseDate, Price, Quantity, Location)
 VALUES 
-    ('Laptop', 'Electronics', '2023-01-15', 1200.00, 5, 'Office A'),
-    ('Projector', 'Electronics', '2023-02-20', 1500.00, 2, 'Conference Room'),
-    ('Printer', 'Office Supplies', '2023-03-10', 500.00, 3, 'Printer Room');
+    ('Laptop', 'Electronics', '2023-01-15', 1200, 5, 'Office A'),
+    ('Projector', 'Electronics', '2023-02-20', 1500, 2, 'Conference Room'),
+    ('Printer', 'Office Supplies', '2023-03-10', 500, 3, 'Printer Room');
 
 INSERT INTO EquipmentMovement (EquipmentID, MovementDate, MovementType, Quantity)
 VALUES 

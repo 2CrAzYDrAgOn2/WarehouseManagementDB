@@ -24,14 +24,21 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var firstName = textBoxFirstNameClients.Text;
-                var lastName = textBoxLastNameClients.Text;
-                var phoneNumber = textBoxPhoneNumberClients.Text;
-                var email = textBoxEmailClients.Text;
-                var addQuery = $"insert into Clients (FirstName, LastName, PhoneNumber, Email) values ('{firstName}', '{lastName}', '{phoneNumber}', '{email}')";
-                var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
-                sqlCommand.ExecuteNonQuery();
-                MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var name = textBoxName.Text;
+                var category = textBoxCategory.Text;
+                var purchaseDate = textBoxPurchaseData.Text;
+                var location = textBoxLocation.Text;
+                if (int.TryParse(textBoxPrice.Text, out int price) && int.TryParse(textBoxQuantinity.Text, out int quantity))
+                {
+                    var addQuery = $"insert into Equipment (Name, Category, PurchaseDate, Price, Quantity, Location) values ('{name}', '{category}', '{purchaseDate}', '{price}', '{quantity}', '{location}')";
+                    var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
+                    sqlCommand.ExecuteNonQuery();
+                    MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Цена должна иметь числовой формат!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
