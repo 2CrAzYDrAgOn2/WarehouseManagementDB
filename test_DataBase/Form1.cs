@@ -62,14 +62,14 @@ namespace test_DataBase
                 dataGridViewEquipment.Columns.Add("Category", "Категория");
                 dataGridViewEquipment.Columns.Add("PurchaseData", "Дата покупки");
                 dataGridViewEquipment.Columns.Add("Price", "Цена");
-                dataGridViewEquipment.Columns.Add("Quantinity", "Количество");
+                dataGridViewEquipment.Columns.Add("Quantity", "Количество");
                 dataGridViewEquipment.Columns.Add("Location", "Расположение");
                 dataGridViewEquipment.Columns.Add("IsNew", String.Empty);
                 dataGridViewEquipmentMovement.Columns.Add("MovementID", "Номер");
                 dataGridViewEquipmentMovement.Columns.Add("EquipmentID", "Номер оборудования");
                 dataGridViewEquipmentMovement.Columns.Add("MovementDate", "Дата передвижения");
                 dataGridViewEquipmentMovement.Columns.Add("MovementType", "Тип передвижения");
-                dataGridViewEquipmentMovement.Columns.Add("Quantinity", "Количество");
+                dataGridViewEquipmentMovement.Columns.Add("Quantity", "Количество");
                 dataGridViewEquipmentMovement.Columns.Add("IsNew", String.Empty);
                 dataGridViewSupplier.Columns.Add("SupplierID", "Номер");
                 dataGridViewSupplier.Columns.Add("Name", "Имя");
@@ -405,9 +405,9 @@ namespace test_DataBase
                                 var category = dataGridView.Rows[index].Cells[2].Value.ToString();
                                 var purchaseData = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var price = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var quantinity = dataGridView.Rows[index].Cells[5].Value.ToString();
+                                var quantity = dataGridView.Rows[index].Cells[5].Value.ToString();
                                 var location = dataGridView.Rows[index].Cells[6].Value.ToString();
-                                var changeQuery = $"update Equipment set Name = '{name}', Category = '{category}', PurchaseData = '{purchaseData}', Price = '{price}', Quantinity = '{quantinity}', Location = '{location}' where EquipmentID = '{equipmentID}'";
+                                var changeQuery = $"update Equipment set Name = '{name}', Category = '{category}', PurchaseDate = '{purchaseData}', Price = '{price}', Quantity = '{quantity}', Location = '{location}' where EquipmentID = '{equipmentID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -432,8 +432,8 @@ namespace test_DataBase
                                 var equipmentID = dataGridView.Rows[index].Cells[1].Value.ToString();
                                 var movementDate = dataGridView.Rows[index].Cells[2].Value.ToString();
                                 var movementType = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var quantinity = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var changeQuery = $"update EquipmentMovement set EquipmentID = '{equipmentID}', MovementDate = '{movementDate}', MovementType = '{movementType}', Quantinity = '{quantinity}' where MovementID = '{movementID}'";
+                                var quantity = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var changeQuery = $"update EquipmentMovement set EquipmentID = '{equipmentID}', MovementDate = '{movementDate}', MovementType = '{movementType}', Quantity = '{quantity}' where MovementID = '{movementID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -475,7 +475,7 @@ namespace test_DataBase
                             {
                                 var equipmentID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
                                 var supplierID = Convert.ToInt32(dataGridView.Rows[index].Cells[1].Value);
-                                var deleteQuery = $"delete from EquipmentSupplier where EquipmentID = '{equipmentID}', SupplierID = '{supplierID}'";
+                                var deleteQuery = $"delete from EquipmentSupplier where EquipmentID = '{equipmentID}' and SupplierID = '{supplierID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -483,7 +483,7 @@ namespace test_DataBase
                             {
                                 var equipmentID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var supplierID = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var changeQuery = $"update EquipmentSupplier where EquipmentID = '{equipmentID}', SupplierID = '{supplierID}'";
+                                var changeQuery = $"update EquipmentSupplier set EquipmentID = '{equipmentID}', SupplierID = '{supplierID}' where EquipmentID = '{equipmentID}' and SupplierID = '{supplierID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -516,21 +516,21 @@ namespace test_DataBase
                         var equipmentID = textBoxEquipmentID.Text;
                         var name = textBoxName.Text;
                         var category = textBoxCategory.Text;
-                        var purchaseData = textBoxPurchaseData.Text;
+                        var purchaseData = textBoxPurchaseData.Value;
                         var price = textBoxPrice.Text;
-                        var quantinity = textBoxQuantinity.Text;
+                        var quantity = textBoxQuantinity.Text;
                         var location = textBoxLocation.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(equipmentID, name, category, purchaseData, price, quantinity, location);
+                        dataGridView.Rows[selectedRowIndex].SetValues(equipmentID, name, category, purchaseData, price, quantity, location);
                         dataGridView.Rows[selectedRowIndex].Cells[7].Value = RowState.Modified;
                         break;
 
                     case "dataGridViewEquipmentMovement":
                         var movementID = textBoxMovementID.Text;
                         var equipmentIDEquipmentMovement = textBoxEquipmentIDEquipmentMovement.Text;
-                        var movementDate = textBoxMovementDate.Text;
+                        var movementDate = textBoxMovementDate.Value;
                         var movementType = textBoxMovementType.Text;
-                        var quantinityEquipmentMovement = textBoxQuantinityEquipmentMovement.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(movementID, equipmentIDEquipmentMovement, movementDate, movementType, quantinityEquipmentMovement);
+                        var quantityEquipmentMovement = textBoxQuantinityEquipmentMovement.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(movementID, equipmentIDEquipmentMovement, movementDate, movementType, quantityEquipmentMovement);
                         dataGridView.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
                         break;
 
@@ -760,6 +760,480 @@ namespace test_DataBase
             try
             {
                 ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewEquipment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormEquipment addForm = new AddFormEquipment();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewEquipmentMovement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormEquipmentMovement addForm = new AddFormEquipmentMovement();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (admin)
+                {
+                    AddFormSupplier addForm = new AddFormSupplier();
+                    addForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостаточно прав!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewEquipmentSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormEquipmentSupplier addForm = new AddFormEquipmentSupplier();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteEquipment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewEquipment);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteEquipmentMovement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewEquipmentMovement);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewSupplier);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteEquipmentSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewEquipmentSupplier);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeEquipment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewEquipment);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeEquipmentMovement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewEquipmentMovement);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewSupplier);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeEquipmentSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewEquipmentSupplier);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveEquipment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewEquipment);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveEquipmentMovement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewEquipmentMovement);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (admin)
+                {
+                    UpdateBase(dataGridViewSupplier);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостаточно прав!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveEquipmentSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewEquipmentSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordEquipment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewEquipment);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordEquipmentMovement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewEquipmentMovement);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordEquipmentSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewEquipmentSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelEquipment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewEquipment);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelEquipmentMovement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewEquipmentMovement);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelEquipmentSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewEquipmentSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFEquipment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewEquipment);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFEquipmentMovement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewEquipmentMovement);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFEquipmentSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewEquipmentSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewEquipment_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewEquipment, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewEquipmentMovement_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewEquipmentMovement, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewSupplier_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewSupplier, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewEquipmentSupplier_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewEquipmentSupplier, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchEquipment_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewEquipment);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchEquipmentMovement_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewEquipmentMovement);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchSupplier_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchEquipmentSupplier_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewEquipmentSupplier);
             }
             catch (Exception ex)
             {

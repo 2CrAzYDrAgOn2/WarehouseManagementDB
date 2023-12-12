@@ -44,7 +44,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.textBoxLocation = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBoxPurchaseData = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
@@ -77,7 +76,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBoxMovementType = new System.Windows.Forms.TextBox();
-            this.textBoxMovementDate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxEquipmentIDEquipmentMovement = new System.Windows.Forms.TextBox();
@@ -104,7 +102,6 @@
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.textBoxContactPerson = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -139,6 +136,9 @@
             this.buttonRefreshEquipmentSupplier = new System.Windows.Forms.Button();
             this.textBoxSearchEquipmentSupplier = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.textBoxPhone = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxMovementDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxPurchaseData = new System.Windows.Forms.DateTimePicker();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelRecord.SuspendLayout();
@@ -199,6 +199,7 @@
             this.buttonPDFEquipment.TabIndex = 4;
             this.buttonPDFEquipment.Text = "Вывод в PDF";
             this.buttonPDFEquipment.UseVisualStyleBackColor = true;
+            this.buttonPDFEquipment.Click += new System.EventHandler(this.ButtonPDFEquipment_Click);
             // 
             // buttonSaveEquipment
             // 
@@ -208,6 +209,7 @@
             this.buttonSaveEquipment.TabIndex = 3;
             this.buttonSaveEquipment.Text = "Сохранить";
             this.buttonSaveEquipment.UseVisualStyleBackColor = true;
+            this.buttonSaveEquipment.Click += new System.EventHandler(this.ButtonSaveEquipment_Click);
             // 
             // buttonExcelEquipment
             // 
@@ -217,6 +219,7 @@
             this.buttonExcelEquipment.TabIndex = 5;
             this.buttonExcelEquipment.Text = "Вывод в Excel";
             this.buttonExcelEquipment.UseVisualStyleBackColor = true;
+            this.buttonExcelEquipment.Click += new System.EventHandler(this.ButtonExcelEquipment_Click);
             // 
             // buttonChangeEquipment
             // 
@@ -226,6 +229,7 @@
             this.buttonChangeEquipment.TabIndex = 2;
             this.buttonChangeEquipment.Text = "Изменить";
             this.buttonChangeEquipment.UseVisualStyleBackColor = true;
+            this.buttonChangeEquipment.Click += new System.EventHandler(this.ButtonChangeEquipment_Click);
             // 
             // buttonWordEquipment
             // 
@@ -235,6 +239,7 @@
             this.buttonWordEquipment.TabIndex = 6;
             this.buttonWordEquipment.Text = "Вывод в Word";
             this.buttonWordEquipment.UseVisualStyleBackColor = true;
+            this.buttonWordEquipment.Click += new System.EventHandler(this.ButtonWordEquipment_Click);
             // 
             // buttonDeleteEquipment
             // 
@@ -244,6 +249,7 @@
             this.buttonDeleteEquipment.TabIndex = 1;
             this.buttonDeleteEquipment.Text = "Удалить";
             this.buttonDeleteEquipment.UseVisualStyleBackColor = true;
+            this.buttonDeleteEquipment.Click += new System.EventHandler(this.ButtonDeleteEquipment_Click);
             // 
             // buttonNewEquipment
             // 
@@ -253,6 +259,7 @@
             this.buttonNewEquipment.TabIndex = 0;
             this.buttonNewEquipment.Text = "Новая запись";
             this.buttonNewEquipment.UseVisualStyleBackColor = true;
+            this.buttonNewEquipment.Click += new System.EventHandler(this.ButtonNewEquipment_Click);
             // 
             // labelControl
             // 
@@ -266,12 +273,12 @@
             // 
             // panelRecord
             // 
+            this.panelRecord.Controls.Add(this.textBoxPurchaseData);
             this.panelRecord.Controls.Add(this.label30);
             this.panelRecord.Controls.Add(this.textBoxQuantinity);
             this.panelRecord.Controls.Add(this.label31);
             this.panelRecord.Controls.Add(this.textBoxLocation);
             this.panelRecord.Controls.Add(this.label19);
-            this.panelRecord.Controls.Add(this.textBoxPurchaseData);
             this.panelRecord.Controls.Add(this.label16);
             this.panelRecord.Controls.Add(this.label17);
             this.panelRecord.Controls.Add(this.textBoxPrice);
@@ -328,14 +335,6 @@
             this.label19.Size = new System.Drawing.Size(80, 13);
             this.label19.TabIndex = 14;
             this.label19.Text = "Дата покупки:";
-            // 
-            // textBoxPurchaseData
-            // 
-            this.textBoxPurchaseData.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPurchaseData.Location = new System.Drawing.Point(130, 176);
-            this.textBoxPurchaseData.Name = "textBoxPurchaseData";
-            this.textBoxPurchaseData.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPurchaseData.TabIndex = 12;
             // 
             // label16
             // 
@@ -426,6 +425,7 @@
             this.dataGridViewEquipment.RowHeadersWidth = 62;
             this.dataGridViewEquipment.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewEquipment.TabIndex = 1;
+            this.dataGridViewEquipment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEquipment_CellClick);
             // 
             // panelTitle
             // 
@@ -467,6 +467,7 @@
             this.textBoxSearchEquipment.Name = "textBoxSearchEquipment";
             this.textBoxSearchEquipment.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchEquipment.TabIndex = 1;
+            this.textBoxSearchEquipment.TextChanged += new System.EventHandler(this.TextBoxSearchEquipment_TextChanged);
             // 
             // labelTitle
             // 
@@ -528,6 +529,7 @@
             this.buttonPDFEquipmentMovement.TabIndex = 4;
             this.buttonPDFEquipmentMovement.Text = "Вывод в PDF";
             this.buttonPDFEquipmentMovement.UseVisualStyleBackColor = true;
+            this.buttonPDFEquipmentMovement.Click += new System.EventHandler(this.ButtonPDFEquipmentMovement_Click);
             // 
             // buttonSaveEquipmentMovement
             // 
@@ -537,6 +539,7 @@
             this.buttonSaveEquipmentMovement.TabIndex = 3;
             this.buttonSaveEquipmentMovement.Text = "Сохранить";
             this.buttonSaveEquipmentMovement.UseVisualStyleBackColor = true;
+            this.buttonSaveEquipmentMovement.Click += new System.EventHandler(this.ButtonSaveEquipmentMovement_Click);
             // 
             // buttonExcelEquipmentMovement
             // 
@@ -546,6 +549,7 @@
             this.buttonExcelEquipmentMovement.TabIndex = 5;
             this.buttonExcelEquipmentMovement.Text = "Вывод в Excel";
             this.buttonExcelEquipmentMovement.UseVisualStyleBackColor = true;
+            this.buttonExcelEquipmentMovement.Click += new System.EventHandler(this.ButtonExcelEquipmentMovement_Click);
             // 
             // buttonChangeEquipmentMovement
             // 
@@ -555,6 +559,7 @@
             this.buttonChangeEquipmentMovement.TabIndex = 2;
             this.buttonChangeEquipmentMovement.Text = "Изменить";
             this.buttonChangeEquipmentMovement.UseVisualStyleBackColor = true;
+            this.buttonChangeEquipmentMovement.Click += new System.EventHandler(this.ButtonChangeEquipmentMovement_Click);
             // 
             // buttonWordEquipmentMovement
             // 
@@ -564,6 +569,7 @@
             this.buttonWordEquipmentMovement.TabIndex = 6;
             this.buttonWordEquipmentMovement.Text = "Вывод в Word";
             this.buttonWordEquipmentMovement.UseVisualStyleBackColor = true;
+            this.buttonWordEquipmentMovement.Click += new System.EventHandler(this.ButtonWordEquipmentMovement_Click);
             // 
             // buttonDeleteEquipmentMovement
             // 
@@ -573,6 +579,7 @@
             this.buttonDeleteEquipmentMovement.TabIndex = 1;
             this.buttonDeleteEquipmentMovement.Text = "Удалить";
             this.buttonDeleteEquipmentMovement.UseVisualStyleBackColor = true;
+            this.buttonDeleteEquipmentMovement.Click += new System.EventHandler(this.ButtonDeleteEquipmentMovement_Click);
             // 
             // buttonNewEquipmentMovement
             // 
@@ -582,6 +589,7 @@
             this.buttonNewEquipmentMovement.TabIndex = 0;
             this.buttonNewEquipmentMovement.Text = "Новая запись";
             this.buttonNewEquipmentMovement.UseVisualStyleBackColor = true;
+            this.buttonNewEquipmentMovement.Click += new System.EventHandler(this.ButtonNewEquipmentMovement_Click);
             // 
             // label1
             // 
@@ -595,12 +603,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxMovementDate);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.textBoxQuantinityEquipmentMovement);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.textBoxMovementType);
-            this.panel2.Controls.Add(this.textBoxMovementDate);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.textBoxEquipmentIDEquipmentMovement);
@@ -653,14 +661,6 @@
             this.textBoxMovementType.Name = "textBoxMovementType";
             this.textBoxMovementType.Size = new System.Drawing.Size(391, 33);
             this.textBoxMovementType.TabIndex = 9;
-            // 
-            // textBoxMovementDate
-            // 
-            this.textBoxMovementDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxMovementDate.Location = new System.Drawing.Point(130, 137);
-            this.textBoxMovementDate.Name = "textBoxMovementDate";
-            this.textBoxMovementDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxMovementDate.TabIndex = 8;
             // 
             // label2
             // 
@@ -717,6 +717,7 @@
             this.dataGridViewEquipmentMovement.RowHeadersWidth = 62;
             this.dataGridViewEquipmentMovement.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewEquipmentMovement.TabIndex = 1;
+            this.dataGridViewEquipmentMovement.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEquipmentMovement_CellClick);
             // 
             // panel3
             // 
@@ -758,6 +759,7 @@
             this.textBoxSearchEquipmentMovement.Name = "textBoxSearchEquipmentMovement";
             this.textBoxSearchEquipmentMovement.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchEquipmentMovement.TabIndex = 1;
+            this.textBoxSearchEquipmentMovement.TextChanged += new System.EventHandler(this.TextBoxSearchEquipmentMovement_TextChanged);
             // 
             // label5
             // 
@@ -806,6 +808,7 @@
             this.buttonPDFSupplier.TabIndex = 4;
             this.buttonPDFSupplier.Text = "Вывод в PDF";
             this.buttonPDFSupplier.UseVisualStyleBackColor = true;
+            this.buttonPDFSupplier.Click += new System.EventHandler(this.ButtonPDFSupplier_Click);
             // 
             // buttonSaveSupplier
             // 
@@ -815,6 +818,7 @@
             this.buttonSaveSupplier.TabIndex = 3;
             this.buttonSaveSupplier.Text = "Сохранить";
             this.buttonSaveSupplier.UseVisualStyleBackColor = true;
+            this.buttonSaveSupplier.Click += new System.EventHandler(this.ButtonSaveSupplier_Click);
             // 
             // buttonExcelSupplier
             // 
@@ -824,6 +828,7 @@
             this.buttonExcelSupplier.TabIndex = 5;
             this.buttonExcelSupplier.Text = "Вывод в Excel";
             this.buttonExcelSupplier.UseVisualStyleBackColor = true;
+            this.buttonExcelSupplier.Click += new System.EventHandler(this.ButtonExcelSupplier_Click);
             // 
             // buttonChangeSupplier
             // 
@@ -833,6 +838,7 @@
             this.buttonChangeSupplier.TabIndex = 2;
             this.buttonChangeSupplier.Text = "Изменить";
             this.buttonChangeSupplier.UseVisualStyleBackColor = true;
+            this.buttonChangeSupplier.Click += new System.EventHandler(this.ButtonChangeSupplier_Click);
             // 
             // buttonWordSupplier
             // 
@@ -842,6 +848,7 @@
             this.buttonWordSupplier.TabIndex = 6;
             this.buttonWordSupplier.Text = "Вывод в Word";
             this.buttonWordSupplier.UseVisualStyleBackColor = true;
+            this.buttonWordSupplier.Click += new System.EventHandler(this.ButtonWordSupplier_Click);
             // 
             // buttonDeleteSupplier
             // 
@@ -851,6 +858,7 @@
             this.buttonDeleteSupplier.TabIndex = 1;
             this.buttonDeleteSupplier.Text = "Удалить";
             this.buttonDeleteSupplier.UseVisualStyleBackColor = true;
+            this.buttonDeleteSupplier.Click += new System.EventHandler(this.ButtonDeleteSupplier_Click);
             // 
             // buttonNewSupplier
             // 
@@ -860,6 +868,7 @@
             this.buttonNewSupplier.TabIndex = 0;
             this.buttonNewSupplier.Text = "Новая запись";
             this.buttonNewSupplier.UseVisualStyleBackColor = true;
+            this.buttonNewSupplier.Click += new System.EventHandler(this.ButtonNewSupplier_Click);
             // 
             // label6
             // 
@@ -873,11 +882,11 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.textBoxPhone);
             this.panel5.Controls.Add(this.label26);
             this.panel5.Controls.Add(this.textBoxEmail);
             this.panel5.Controls.Add(this.label23);
             this.panel5.Controls.Add(this.label24);
-            this.panel5.Controls.Add(this.textBoxPhone);
             this.panel5.Controls.Add(this.textBoxContactPerson);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label8);
@@ -923,14 +932,6 @@
             this.label24.Size = new System.Drawing.Size(96, 13);
             this.label24.TabIndex = 10;
             this.label24.Text = "Контактное лицо:";
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhone.Location = new System.Drawing.Point(130, 176);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhone.TabIndex = 9;
             // 
             // textBoxContactPerson
             // 
@@ -995,6 +996,7 @@
             this.dataGridViewSupplier.RowHeadersWidth = 62;
             this.dataGridViewSupplier.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewSupplier.TabIndex = 1;
+            this.dataGridViewSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewSupplier_CellClick);
             // 
             // panel6
             // 
@@ -1036,6 +1038,7 @@
             this.textBoxSearchSupplier.Name = "textBoxSearchSupplier";
             this.textBoxSearchSupplier.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchSupplier.TabIndex = 1;
+            this.textBoxSearchSupplier.TextChanged += new System.EventHandler(this.TextBoxSearchSupplier_TextChanged);
             // 
             // label10
             // 
@@ -1084,6 +1087,7 @@
             this.buttonPDFEquipmentSupplier.TabIndex = 4;
             this.buttonPDFEquipmentSupplier.Text = "Вывод в PDF";
             this.buttonPDFEquipmentSupplier.UseVisualStyleBackColor = true;
+            this.buttonPDFEquipmentSupplier.Click += new System.EventHandler(this.ButtonPDFEquipmentSupplier_Click);
             // 
             // buttonSaveEquipmentSupplier
             // 
@@ -1093,6 +1097,7 @@
             this.buttonSaveEquipmentSupplier.TabIndex = 3;
             this.buttonSaveEquipmentSupplier.Text = "Сохранить";
             this.buttonSaveEquipmentSupplier.UseVisualStyleBackColor = true;
+            this.buttonSaveEquipmentSupplier.Click += new System.EventHandler(this.ButtonSaveEquipmentSupplier_Click);
             // 
             // buttonExcelEquipmentSupplier
             // 
@@ -1102,6 +1107,7 @@
             this.buttonExcelEquipmentSupplier.TabIndex = 5;
             this.buttonExcelEquipmentSupplier.Text = "Вывод в Excel";
             this.buttonExcelEquipmentSupplier.UseVisualStyleBackColor = true;
+            this.buttonExcelEquipmentSupplier.Click += new System.EventHandler(this.ButtonExcelEquipmentSupplier_Click);
             // 
             // buttonChangeEquipmentSupplier
             // 
@@ -1111,6 +1117,7 @@
             this.buttonChangeEquipmentSupplier.TabIndex = 2;
             this.buttonChangeEquipmentSupplier.Text = "Изменить";
             this.buttonChangeEquipmentSupplier.UseVisualStyleBackColor = true;
+            this.buttonChangeEquipmentSupplier.Click += new System.EventHandler(this.ButtonChangeEquipmentSupplier_Click);
             // 
             // buttonWordEquipmentSupplier
             // 
@@ -1120,6 +1127,7 @@
             this.buttonWordEquipmentSupplier.TabIndex = 6;
             this.buttonWordEquipmentSupplier.Text = "Вывод в Word";
             this.buttonWordEquipmentSupplier.UseVisualStyleBackColor = true;
+            this.buttonWordEquipmentSupplier.Click += new System.EventHandler(this.ButtonWordEquipmentSupplier_Click);
             // 
             // buttonDeleteEquipmentSupplier
             // 
@@ -1129,6 +1137,7 @@
             this.buttonDeleteEquipmentSupplier.TabIndex = 1;
             this.buttonDeleteEquipmentSupplier.Text = "Удалить";
             this.buttonDeleteEquipmentSupplier.UseVisualStyleBackColor = true;
+            this.buttonDeleteEquipmentSupplier.Click += new System.EventHandler(this.ButtonDeleteEquipmentSupplier_Click);
             // 
             // buttonNewEquipmentSupplier
             // 
@@ -1138,6 +1147,7 @@
             this.buttonNewEquipmentSupplier.TabIndex = 0;
             this.buttonNewEquipmentSupplier.Text = "Новая запись";
             this.buttonNewEquipmentSupplier.UseVisualStyleBackColor = true;
+            this.buttonNewEquipmentSupplier.Click += new System.EventHandler(this.ButtonNewEquipmentSupplier_Click);
             // 
             // label11
             // 
@@ -1216,6 +1226,7 @@
             this.dataGridViewEquipmentSupplier.RowHeadersWidth = 62;
             this.dataGridViewEquipmentSupplier.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewEquipmentSupplier.TabIndex = 1;
+            this.dataGridViewEquipmentSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEquipmentSupplier_CellClick);
             // 
             // panel9
             // 
@@ -1257,6 +1268,7 @@
             this.textBoxSearchEquipmentSupplier.Name = "textBoxSearchEquipmentSupplier";
             this.textBoxSearchEquipmentSupplier.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchEquipmentSupplier.TabIndex = 1;
+            this.textBoxSearchEquipmentSupplier.TextChanged += new System.EventHandler(this.TextBoxSearchEquipmentSupplier_TextChanged);
             // 
             // label15
             // 
@@ -1267,6 +1279,31 @@
             this.label15.Size = new System.Drawing.Size(368, 65);
             this.label15.TabIndex = 0;
             this.label15.Text = "Поставки обор.";
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPhone.Location = new System.Drawing.Point(130, 176);
+            this.textBoxPhone.Mask = "+7 999 999-99-99";
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhone.TabIndex = 16;
+            // 
+            // textBoxMovementDate
+            // 
+            this.textBoxMovementDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxMovementDate.Location = new System.Drawing.Point(130, 137);
+            this.textBoxMovementDate.Name = "textBoxMovementDate";
+            this.textBoxMovementDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxMovementDate.TabIndex = 17;
+            // 
+            // textBoxPurchaseData
+            // 
+            this.textBoxPurchaseData.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPurchaseData.Location = new System.Drawing.Point(130, 176);
+            this.textBoxPurchaseData.Name = "textBoxPurchaseData";
+            this.textBoxPurchaseData.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPurchaseData.TabIndex = 19;
             // 
             // Form1
             // 
@@ -1405,7 +1442,6 @@
         private System.Windows.Forms.TextBox textBoxSearchEquipmentSupplier;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBoxPurchaseData;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxPrice;
@@ -1415,16 +1451,17 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBoxMovementType;
-        private System.Windows.Forms.TextBox textBoxMovementDate;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.TextBox textBoxContactPerson;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox textBoxQuantinity;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox textBoxLocation;
+        private System.Windows.Forms.MaskedTextBox textBoxPhone;
+        private System.Windows.Forms.DateTimePicker textBoxPurchaseData;
+        private System.Windows.Forms.DateTimePicker textBoxMovementDate;
     }
 }

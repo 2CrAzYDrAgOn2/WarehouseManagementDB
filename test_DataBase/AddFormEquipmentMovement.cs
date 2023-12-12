@@ -24,7 +24,7 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var movementDate = textBoxMovementDate.Text;
+                var movementDate = textBoxMovementDate.Value;
                 var movementType = textBoxMovementType.Text;
                 if (int.TryParse(textBoxEquipmentIDEquipmentMovement.Text, out int equipmentID) && int.TryParse(textBoxQuantinityEquipmentMovement.Text, out int quantity))
                 {

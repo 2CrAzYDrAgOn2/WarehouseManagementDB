@@ -26,7 +26,7 @@ namespace test_DataBase
                 dataBase.OpenConnection();
                 var name = textBoxName.Text;
                 var category = textBoxCategory.Text;
-                var purchaseDate = textBoxPurchaseData.Text;
+                var purchaseDate = textBoxPurchaseData.Value;
                 var location = textBoxLocation.Text;
                 if (int.TryParse(textBoxPrice.Text, out int price) && int.TryParse(textBoxQuantinity.Text, out int quantity))
                 {

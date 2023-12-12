@@ -36,9 +36,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBoxMovementType = new System.Windows.Forms.TextBox();
-            this.textBoxMovementDate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxEquipmentIDEquipmentMovement = new System.Windows.Forms.TextBox();
+            this.textBoxMovementDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -114,14 +114,6 @@
             this.textBoxMovementType.Size = new System.Drawing.Size(391, 33);
             this.textBoxMovementType.TabIndex = 47;
             // 
-            // textBoxMovementDate
-            // 
-            this.textBoxMovementDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxMovementDate.Location = new System.Drawing.Point(245, 395);
-            this.textBoxMovementDate.Name = "textBoxMovementDate";
-            this.textBoxMovementDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxMovementDate.TabIndex = 46;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -139,17 +131,25 @@
             this.textBoxEquipmentIDEquipmentMovement.Size = new System.Drawing.Size(391, 33);
             this.textBoxEquipmentIDEquipmentMovement.TabIndex = 44;
             // 
+            // textBoxMovementDate
+            // 
+            this.textBoxMovementDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxMovementDate.Location = new System.Drawing.Point(245, 395);
+            this.textBoxMovementDate.Name = "textBoxMovementDate";
+            this.textBoxMovementDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxMovementDate.TabIndex = 52;
+            // 
             // AddFormEquipmentMovement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxMovementDate);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.textBoxQuantinityEquipmentMovement);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.textBoxMovementType);
-            this.Controls.Add(this.textBoxMovementDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxEquipmentIDEquipmentMovement);
             this.Controls.Add(this.label1);
@@ -171,8 +171,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBoxMovementType;
-        private System.Windows.Forms.TextBox textBoxMovementDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxEquipmentIDEquipmentMovement;
+        private System.Windows.Forms.DateTimePicker textBoxMovementDate;
     }
 }

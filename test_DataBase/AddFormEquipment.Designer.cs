@@ -36,13 +36,13 @@
             this.label31 = new System.Windows.Forms.Label();
             this.textBoxLocation = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBoxPurchaseData = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxPurchaseData = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -118,14 +118,6 @@
             this.label19.TabIndex = 35;
             this.label19.Text = "Дата покупки:";
             // 
-            // textBoxPurchaseData
-            // 
-            this.textBoxPurchaseData.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPurchaseData.Location = new System.Drawing.Point(250, 427);
-            this.textBoxPurchaseData.Name = "textBoxPurchaseData";
-            this.textBoxPurchaseData.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPurchaseData.TabIndex = 34;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -177,17 +169,25 @@
             this.textBoxName.Size = new System.Drawing.Size(391, 33);
             this.textBoxName.TabIndex = 27;
             // 
+            // textBoxPurchaseData
+            // 
+            this.textBoxPurchaseData.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPurchaseData.Location = new System.Drawing.Point(250, 427);
+            this.textBoxPurchaseData.Name = "textBoxPurchaseData";
+            this.textBoxPurchaseData.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPurchaseData.TabIndex = 40;
+            // 
             // AddFormEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxPurchaseData);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.textBoxQuantinity);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.textBoxLocation);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBoxPurchaseData);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBoxPrice);
@@ -213,12 +213,12 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox textBoxLocation;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBoxPurchaseData;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.DateTimePicker textBoxPurchaseData;
     }
 }
