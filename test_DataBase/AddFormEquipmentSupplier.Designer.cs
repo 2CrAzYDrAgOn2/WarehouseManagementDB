@@ -113,6 +113,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "AddFormEquipmentSupplier";
             this.Text = "Добавить поставку оборудования";
             this.ResumeLayout(false);

@@ -130,6 +130,8 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.buttonEnter);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "LogIn";
             this.Text = "Вход";
             this.Load += new System.EventHandler(this.Form1_Load);

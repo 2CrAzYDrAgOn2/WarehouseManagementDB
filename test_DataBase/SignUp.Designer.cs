@@ -117,6 +117,8 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.buttonCreate);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SignUp";
             this.Text = "Регистрация";
             this.Load += new System.EventHandler(this.SignUp_Load);

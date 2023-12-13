@@ -39,6 +39,7 @@
             this.buttonNewEquipment = new System.Windows.Forms.Button();
             this.labelControl = new System.Windows.Forms.Label();
             this.panelRecord = new System.Windows.Forms.Panel();
+            this.textBoxPurchaseData = new System.Windows.Forms.DateTimePicker();
             this.label30 = new System.Windows.Forms.Label();
             this.textBoxQuantinity = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             this.buttonNewEquipmentMovement = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxMovementDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.textBoxQuantinityEquipmentMovement = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -98,6 +100,7 @@
             this.buttonNewSupplier = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBoxPhone = new System.Windows.Forms.MaskedTextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -136,9 +139,6 @@
             this.buttonRefreshEquipmentSupplier = new System.Windows.Forms.Button();
             this.textBoxSearchEquipmentSupplier = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBoxPhone = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxMovementDate = new System.Windows.Forms.DateTimePicker();
-            this.textBoxPurchaseData = new System.Windows.Forms.DateTimePicker();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelRecord.SuspendLayout();
@@ -292,6 +292,14 @@
             this.panelRecord.Name = "panelRecord";
             this.panelRecord.Size = new System.Drawing.Size(524, 481);
             this.panelRecord.TabIndex = 2;
+            // 
+            // textBoxPurchaseData
+            // 
+            this.textBoxPurchaseData.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPurchaseData.Location = new System.Drawing.Point(130, 176);
+            this.textBoxPurchaseData.Name = "textBoxPurchaseData";
+            this.textBoxPurchaseData.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPurchaseData.TabIndex = 19;
             // 
             // label30
             // 
@@ -619,6 +627,14 @@
             this.panel2.Size = new System.Drawing.Size(524, 481);
             this.panel2.TabIndex = 2;
             // 
+            // textBoxMovementDate
+            // 
+            this.textBoxMovementDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxMovementDate.Location = new System.Drawing.Point(130, 137);
+            this.textBoxMovementDate.Name = "textBoxMovementDate";
+            this.textBoxMovementDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxMovementDate.TabIndex = 17;
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -897,6 +913,15 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(524, 481);
             this.panel5.TabIndex = 2;
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPhone.Location = new System.Drawing.Point(130, 176);
+            this.textBoxPhone.Mask = "+7 999 999-99-99";
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhone.TabIndex = 16;
             // 
             // label26
             // 
@@ -1280,37 +1305,14 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Поставки обор.";
             // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxPhone.Location = new System.Drawing.Point(130, 176);
-            this.textBoxPhone.Mask = "+7 999 999-99-99";
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhone.TabIndex = 16;
-            // 
-            // textBoxMovementDate
-            // 
-            this.textBoxMovementDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxMovementDate.Location = new System.Drawing.Point(130, 137);
-            this.textBoxMovementDate.Name = "textBoxMovementDate";
-            this.textBoxMovementDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxMovementDate.TabIndex = 17;
-            // 
-            // textBoxPurchaseData
-            // 
-            this.textBoxPurchaseData.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxPurchaseData.Location = new System.Drawing.Point(130, 176);
-            this.textBoxPurchaseData.Name = "textBoxPurchaseData";
-            this.textBoxPurchaseData.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPurchaseData.TabIndex = 19;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 899);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Учёт складского оборудования";
             this.Load += new System.EventHandler(this.Form1_Load);
