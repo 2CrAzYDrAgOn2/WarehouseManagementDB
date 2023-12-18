@@ -132,11 +132,11 @@ namespace test_DataBase
                 switch (dataGridView.Name)
                 {
                     case "dataGridViewEquipment":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetString(2), iDataRecord.GetDateTime(3), iDataRecord.GetInt32(4), iDataRecord.GetInt32(5), iDataRecord.GetString(6), RowState.Modified);
+                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetString(2), iDataRecord.GetDateTime(3).ToString("yyyy-MM-dd"), iDataRecord.GetInt32(4), iDataRecord.GetInt32(5), iDataRecord.GetString(6), RowState.Modified);
                         break;
 
                     case "dataGridViewEquipmentMovement":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetDateTime(2), iDataRecord.GetString(3), iDataRecord.GetInt32(4), RowState.Modified);
+                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetDateTime(2).ToString("yyyy-MM-dd"), iDataRecord.GetString(3), iDataRecord.GetInt32(4), RowState.Modified);
                         break;
 
                     case "dataGridViewSupplier":
@@ -726,6 +726,28 @@ namespace test_DataBase
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ImportToExcel(DataGridView dataGridView)
+        {
+            switch (dataGridView.Name)
+            {
+                case "dataGridViewEquipment":
+
+                    break;
+
+                case "dataGridViewEquipmentMovement":
+
+                    break;
+
+                case "dataGridViewSupplier":
+
+                    break;
+
+                case "dataGridViewEquipmentSupplier":
+
+                    break;
             }
         }
 
