@@ -411,6 +411,18 @@ namespace test_DataBase
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
+                            if (rowStateEquipment == RowState.New)
+                            {
+                                var name = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var category = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var purchaseData = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var price = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var quantity = dataGridView.Rows[index].Cells[5].Value.ToString();
+                                var location = dataGridView.Rows[index].Cells[6].Value.ToString();
+                                var newQuery = $"insert into Equipment (Name, Category, PurchaseDate, Price, Quantity, Location) values ('{name}', '{category}', '{purchaseData}', '{price}', '{quantity}', '{location}')";
+                                var sqlCommand = new SqlCommand(newQuery, dataBase.GetConnection());
+                                sqlCommand.ExecuteNonQuery();
+                            }
                             break;
 
                         case "dataGridViewEquipmentMovement":
@@ -435,6 +447,16 @@ namespace test_DataBase
                                 var quantity = dataGridView.Rows[index].Cells[4].Value.ToString();
                                 var changeQuery = $"update EquipmentMovement set EquipmentID = '{equipmentID}', MovementDate = '{movementDate}', MovementType = '{movementType}', Quantity = '{quantity}' where MovementID = '{movementID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
+                                sqlCommand.ExecuteNonQuery();
+                            }
+                            if (rowStateEquipmentMovement == RowState.New)
+                            {
+                                var equipmentID = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var movementDate = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var movementType = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var quantity = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var newQuery = $"insert into EquipmentMovement (EquipmentID, MovementDate, MovementType, Quantity) values ('{equipmentID}', '{movementDate}', '{movementType}', '{quantity}')";
+                                var sqlCommand = new SqlCommand(newQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
@@ -463,6 +485,16 @@ namespace test_DataBase
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
+                            if (rowStateSupplier == RowState.New)
+                            {
+                                var name = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var contactPerson = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var phone = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var email = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var newQuery = $"insert into Supplier (Name, ContactPerson, Phone, Email) values ('{name}', '{contactPerson}', '{phone}', '{email}')";
+                                var sqlCommand = new SqlCommand(newQuery, dataBase.GetConnection());
+                                sqlCommand.ExecuteNonQuery();
+                            }
                             break;
 
                         case "dataGridViewEquipmentSupplier":
@@ -485,6 +517,14 @@ namespace test_DataBase
                                 var supplierID = dataGridView.Rows[index].Cells[1].Value.ToString();
                                 var changeQuery = $"update EquipmentSupplier set EquipmentID = '{equipmentID}', SupplierID = '{supplierID}' where EquipmentID = '{equipmentID}' and SupplierID = '{supplierID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
+                                sqlCommand.ExecuteNonQuery();
+                            }
+                            if (rowStateEquipmentSupplier == RowState.New)
+                            {
+                                var equipmentID = dataGridView.Rows[index].Cells[0].Value.ToString();
+                                var supplierID = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var newQuery = $"insert into EquipmentSupplier (EquipmentID, SupplierID) values ('{equipmentID}', '{supplierID}')";
+                                var sqlCommand = new SqlCommand(newQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
@@ -729,25 +769,44 @@ namespace test_DataBase
             }
         }
 
-        private void ImportToExcel(DataGridView dataGridView)
+        private void ImportFromExcel(DataGridView dataGridView)
         {
-            switch (dataGridView.Name)
+            try
             {
-                case "dataGridViewEquipment":
-
-                    break;
-
-                case "dataGridViewEquipmentMovement":
-
-                    break;
-
-                case "dataGridViewSupplier":
-
-                    break;
-
-                case "dataGridViewEquipmentSupplier":
-
-                    break;
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    Filter = "Excel Files|*.xls;*.xlsx;*.xlsm"
+                };
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    Excel.Application excelApp = new Excel.Application();
+                    Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
+                    Excel.Worksheet worksheet = workbook.Sheets[1];
+                    int rowsCount = worksheet.UsedRange.Rows.Count;
+                    int colsCount = worksheet.UsedRange.Columns.Count;
+                    for (int row = 1; row <= rowsCount; row++)
+                    {
+                        DataGridViewRow dataGridViewRow = new DataGridViewRow();
+                        for (int col = 1; col <= colsCount; col++)
+                        {
+                            dataGridViewRow.Cells.Add(new DataGridViewTextBoxCell
+                            {
+                                Value = worksheet.Cells[row, col].Value
+                            });
+                        }
+                        dataGridViewRow.Cells.Add(new DataGridViewTextBoxCell
+                        {
+                            Value = RowState.New
+                        });
+                        dataGridView.Rows.Add(dataGridViewRow);
+                    }
+                    excelApp.Quit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -1256,6 +1315,54 @@ namespace test_DataBase
             try
             {
                 Search(dataGridViewEquipmentSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonImportFromExcelEquipment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ImportFromExcel(dataGridViewEquipment);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonImportFromExcelEquipmentMovement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ImportFromExcel(dataGridViewEquipmentMovement);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonImportFromExcelSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ImportFromExcel(dataGridViewSupplier);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonImportFromExcelEquipmentSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ImportFromExcel(dataGridViewEquipmentSupplier);
             }
             catch (Exception ex)
             {

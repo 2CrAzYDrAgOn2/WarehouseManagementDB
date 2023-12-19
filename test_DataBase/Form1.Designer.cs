@@ -139,6 +139,10 @@
             this.buttonRefreshEquipmentSupplier = new System.Windows.Forms.Button();
             this.textBoxSearchEquipmentSupplier = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.buttonImportFromExcelEquipment = new System.Windows.Forms.Button();
+            this.buttonImportFromExcelEquipmentMovement = new System.Windows.Forms.Button();
+            this.buttonImportFromExcelSupplier = new System.Windows.Forms.Button();
+            this.buttonImportFromExcelEquipmentSupplier = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelRecord.SuspendLayout();
@@ -172,13 +176,14 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(761, 874);
+            this.tabPage1.Size = new System.Drawing.Size(761, 940);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Оборудование";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panelControl
             // 
+            this.panelControl.Controls.Add(this.buttonImportFromExcelEquipment);
             this.panelControl.Controls.Add(this.buttonPDFEquipment);
             this.panelControl.Controls.Add(this.buttonSaveEquipment);
             this.panelControl.Controls.Add(this.buttonExcelEquipment);
@@ -188,7 +193,7 @@
             this.panelControl.Controls.Add(this.buttonNewEquipment);
             this.panelControl.Location = new System.Drawing.Point(543, 418);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(208, 453);
+            this.panelControl.Size = new System.Drawing.Size(208, 514);
             this.panelControl.TabIndex = 4;
             // 
             // buttonPDFEquipment
@@ -290,7 +295,7 @@
             this.panelRecord.Controls.Add(this.labelRecord);
             this.panelRecord.Location = new System.Drawing.Point(8, 390);
             this.panelRecord.Name = "panelRecord";
-            this.panelRecord.Size = new System.Drawing.Size(524, 481);
+            this.panelRecord.Size = new System.Drawing.Size(524, 542);
             this.panelRecord.TabIndex = 2;
             // 
             // textBoxPurchaseData
@@ -496,7 +501,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(769, 900);
+            this.tabControl1.Size = new System.Drawing.Size(769, 966);
             this.tabControl1.TabIndex = 3;
             this.tabControl1.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
@@ -510,13 +515,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(761, 874);
+            this.tabPage2.Size = new System.Drawing.Size(761, 940);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Пер. обор.";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonImportFromExcelEquipmentMovement);
             this.panel1.Controls.Add(this.buttonPDFEquipmentMovement);
             this.panel1.Controls.Add(this.buttonSaveEquipmentMovement);
             this.panel1.Controls.Add(this.buttonExcelEquipmentMovement);
@@ -526,7 +532,7 @@
             this.panel1.Controls.Add(this.buttonNewEquipmentMovement);
             this.panel1.Location = new System.Drawing.Point(543, 418);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(208, 453);
+            this.panel1.Size = new System.Drawing.Size(208, 513);
             this.panel1.TabIndex = 4;
             // 
             // buttonPDFEquipmentMovement
@@ -624,7 +630,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(8, 390);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(524, 481);
+            this.panel2.Size = new System.Drawing.Size(524, 541);
             this.panel2.TabIndex = 2;
             // 
             // textBoxMovementDate
@@ -797,13 +803,14 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(761, 874);
+            this.tabPage3.Size = new System.Drawing.Size(761, 940);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Поставщики";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.buttonImportFromExcelSupplier);
             this.panel4.Controls.Add(this.buttonPDFSupplier);
             this.panel4.Controls.Add(this.buttonSaveSupplier);
             this.panel4.Controls.Add(this.buttonExcelSupplier);
@@ -813,7 +820,7 @@
             this.panel4.Controls.Add(this.buttonNewSupplier);
             this.panel4.Location = new System.Drawing.Point(543, 418);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(208, 453);
+            this.panel4.Size = new System.Drawing.Size(208, 513);
             this.panel4.TabIndex = 4;
             // 
             // buttonPDFSupplier
@@ -911,7 +918,7 @@
             this.panel5.Controls.Add(this.label9);
             this.panel5.Location = new System.Drawing.Point(8, 390);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(524, 481);
+            this.panel5.Size = new System.Drawing.Size(524, 541);
             this.panel5.TabIndex = 2;
             // 
             // textBoxPhone
@@ -1085,13 +1092,14 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(761, 874);
+            this.tabPage4.Size = new System.Drawing.Size(761, 940);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Поставки обор.";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.buttonImportFromExcelEquipmentSupplier);
             this.panel7.Controls.Add(this.buttonPDFEquipmentSupplier);
             this.panel7.Controls.Add(this.buttonSaveEquipmentSupplier);
             this.panel7.Controls.Add(this.buttonExcelEquipmentSupplier);
@@ -1101,7 +1109,7 @@
             this.panel7.Controls.Add(this.buttonNewEquipmentSupplier);
             this.panel7.Location = new System.Drawing.Point(543, 418);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(208, 453);
+            this.panel7.Size = new System.Drawing.Size(208, 513);
             this.panel7.TabIndex = 4;
             // 
             // buttonPDFEquipmentSupplier
@@ -1193,7 +1201,7 @@
             this.panel8.Controls.Add(this.label14);
             this.panel8.Location = new System.Drawing.Point(8, 390);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(524, 481);
+            this.panel8.Size = new System.Drawing.Size(524, 541);
             this.panel8.TabIndex = 2;
             // 
             // label12
@@ -1305,11 +1313,51 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Поставки обор.";
             // 
+            // buttonImportFromExcelEquipment
+            // 
+            this.buttonImportFromExcelEquipment.Location = new System.Drawing.Point(3, 453);
+            this.buttonImportFromExcelEquipment.Name = "buttonImportFromExcelEquipment";
+            this.buttonImportFromExcelEquipment.Size = new System.Drawing.Size(202, 58);
+            this.buttonImportFromExcelEquipment.TabIndex = 7;
+            this.buttonImportFromExcelEquipment.Text = "Импорт из Excel";
+            this.buttonImportFromExcelEquipment.UseVisualStyleBackColor = true;
+            this.buttonImportFromExcelEquipment.Click += new System.EventHandler(this.ButtonImportFromExcelEquipment_Click);
+            // 
+            // buttonImportFromExcelEquipmentMovement
+            // 
+            this.buttonImportFromExcelEquipmentMovement.Location = new System.Drawing.Point(3, 453);
+            this.buttonImportFromExcelEquipmentMovement.Name = "buttonImportFromExcelEquipmentMovement";
+            this.buttonImportFromExcelEquipmentMovement.Size = new System.Drawing.Size(202, 58);
+            this.buttonImportFromExcelEquipmentMovement.TabIndex = 8;
+            this.buttonImportFromExcelEquipmentMovement.Text = "Импорт из Excel";
+            this.buttonImportFromExcelEquipmentMovement.UseVisualStyleBackColor = true;
+            this.buttonImportFromExcelEquipmentMovement.Click += new System.EventHandler(this.ButtonImportFromExcelEquipmentMovement_Click);
+            // 
+            // buttonImportFromExcelSupplier
+            // 
+            this.buttonImportFromExcelSupplier.Location = new System.Drawing.Point(3, 453);
+            this.buttonImportFromExcelSupplier.Name = "buttonImportFromExcelSupplier";
+            this.buttonImportFromExcelSupplier.Size = new System.Drawing.Size(202, 58);
+            this.buttonImportFromExcelSupplier.TabIndex = 8;
+            this.buttonImportFromExcelSupplier.Text = "Импорт из Excel";
+            this.buttonImportFromExcelSupplier.UseVisualStyleBackColor = true;
+            this.buttonImportFromExcelSupplier.Click += new System.EventHandler(this.ButtonImportFromExcelSupplier_Click);
+            // 
+            // buttonImportFromExcelEquipmentSupplier
+            // 
+            this.buttonImportFromExcelEquipmentSupplier.Location = new System.Drawing.Point(3, 453);
+            this.buttonImportFromExcelEquipmentSupplier.Name = "buttonImportFromExcelEquipmentSupplier";
+            this.buttonImportFromExcelEquipmentSupplier.Size = new System.Drawing.Size(202, 58);
+            this.buttonImportFromExcelEquipmentSupplier.TabIndex = 8;
+            this.buttonImportFromExcelEquipmentSupplier.Text = "Импорт из Excel";
+            this.buttonImportFromExcelEquipmentSupplier.UseVisualStyleBackColor = true;
+            this.buttonImportFromExcelEquipmentSupplier.Click += new System.EventHandler(this.ButtonImportFromExcelEquipmentSupplier_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 899);
+            this.ClientSize = new System.Drawing.Size(767, 965);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
@@ -1465,5 +1513,9 @@
         private System.Windows.Forms.MaskedTextBox textBoxPhone;
         private System.Windows.Forms.DateTimePicker textBoxPurchaseData;
         private System.Windows.Forms.DateTimePicker textBoxMovementDate;
+        private System.Windows.Forms.Button buttonImportFromExcelEquipment;
+        private System.Windows.Forms.Button buttonImportFromExcelEquipmentMovement;
+        private System.Windows.Forms.Button buttonImportFromExcelSupplier;
+        private System.Windows.Forms.Button buttonImportFromExcelEquipmentSupplier;
     }
 }
